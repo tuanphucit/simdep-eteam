@@ -16,7 +16,7 @@ $sql->set_query("vot_homeblock", "*", $conds, $others);
 		$tabName = $sql->farray["homeblock_name"];
 		$tabLink = $sql->farray["homeblock_linkto"];
 		$typePos = $sql->farray["homeblock_istop"];
-$blockContent .= '<table width="650px" cellpadding=0 cellpacing=0 border=0>';	
+
 	/*			
 $sqll = new mysql();
 $conds = "modules_id='".$tabId."'";
@@ -143,7 +143,7 @@ $blockContent.= "
 					<td width=\"30\" style=\"border-right:0px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000; text-align:center;font-weight:bold\" class=\"datmua\"><a href=\"".$Linkto."\"><img src=\" ".$_IMG_DIR.'/cart_icon.png'."\"> </a></td>
 				</tr>";		
 	 }
-	$blockContent.='</table></td></tr><tr><td height="30" style="background-image:url('.$_IMG_DIR.'/pagetitle_1.gif); background-repeat:repeat-y; padding-left:5px;"><a href="#"  onclick="window.location.href=\''.$_URL_BASE.'/download/?id='.$moId.'\'"><img src="'.$_IMG_DIR.'/excel.gif" border="0" align="absmiddle" style="padding:0px 0px 4px 0px"></a><span style="text-align:right; padding-left:270px"><a style="text-align:right;color:#ff6603; font-weight:bold; font-family:tahoma" href="'.$_URL_BASE.'/index.php/'.$moId.'/'.$tabName.'">'.$define["var_tatca"].'</a></span></td></tr><tr><td valign="top" style="padding-bottom:10px"><img src="'.$_IMG_DIR.'/pagetitle_2.gif" border="0"></td><tr></table>'; 
+	$blockContent.='</table></td></tr><tr><td height="30" style="background-image:url('.$_IMG_DIR.'/pagetitle_1.gif); background-repeat:repeat-y; padding-left:5px;"><a href="#"  onclick="window.location.href=\''.$_URL_BASE.'/download/?id='.$moId.'\'"><img src="'.$_IMG_DIR.'/excel.gif" border="0" align="absmiddle" style="padding:0px 0px 4px 0px"></a><span style="text-align:right; padding-left:270px"><a style="text-align:right;color:#ff6603; font-weight:bold; font-family:tahoma" href="'.$_URL_BASE.'/index.php/'.$moId.'/'.$tabName.'">'.$define["var_tatca"].'</a></span></td></tr><tr><td valign="top" style="padding-bottom:10px"></td><tr></table>'; 
 }	
 require_once("$_HTML_DIR/center_content_home.php");
 

@@ -116,8 +116,7 @@
         </div><!-- End #header -->
         <div id="middle">
             <? if(is_file("$contentFile")) require_once("$contentFile");?>
-            </div><!-- End #middle-content -->
-            <div id="middle-right">
+			<div id="middle-right">
                 <div id="middle-right1" class="right sim-list"><!-- đây là phần sim đẹp đặc biệt -->
                     <a class="first">Sim đẹp đặc biệt</a>
                     <p><a href="#">0987 654 321</a><span>3,000,000,000</span></p>
