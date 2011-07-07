@@ -186,17 +186,16 @@ img{
 /*----------#middle---------------*/
 #middle{
     background: white;
-    width: 990px;
-    padding: 5px;
+    width: 1000px;
     _width: 1000px;
 }
 
 /*-------#middle-content-------*/
 #middle-content{
-    width: 550px;
+    width: 560px;
     float: left;
     background: white;
-    margin-left:-5px;
+    
 }
 .middle-content-row{
     height: 30px;
@@ -313,9 +312,8 @@ img{
 
 /*--------#middle-right--------*/
 #middle-right{
-    width: 447px;
+    width: 440px;
     float: right;
-    margin-right:133px;
     background:white;
 }
 
