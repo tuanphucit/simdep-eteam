@@ -13,7 +13,7 @@
                     <li><a href="<?=$_URL_BASE?>/index.php/index.php/41/Vietnamobile">Vietnamobile</a></li>
                     <li><a href="<?=$_URL_BASE?>/index.php/3/tin-tuc">Tin Tức</a></li>
                     <li><a href="<?=$_URL_BASE?>/index.php/2/huong-dan-mua-sim">Hướng dẫn mua sim</a></li>
-					<li><a href = "<?=$_URL_BASE?>/index.php/5/thanh-toan"> Hướng dẫn thanh toán</a></li>
+					<li><a href = "<?=$_URL_BASE?>/index.php/contact"> Liên hệ</a></li>
                 </ul>
             </div><!-- End #menu -->
             
