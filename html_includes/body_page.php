@@ -14,6 +14,8 @@
                     <li><a href="<?=$_URL_BASE?>/index.php/3/tin-tuc">Tin Tức</a></li>
                     <li><a href="<?=$_URL_BASE?>/index.php/2/huong-dan-mua-sim">Hướng dẫn mua sim</a></li>
 					<li><a href = "<?=$_URL_BASE?>/index.php/contact"> Liên hệ</a></li>
+				
+					
                 </ul>
             </div><!-- End #menu -->
             
@@ -118,19 +120,8 @@
             <? if(is_file("$contentFile")) require_once("$contentFile");?>
 			<div id="middle-right">
                 <div id="middle-right1" class="right sim-list"><!-- đây là phần sim đẹp đặc biệt -->
-                    <a class="first">Sim đẹp đặc biệt</a>
-                    <p><a href="#">0987 654 321</a><span>3,000,000,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>3,000,000,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>3,000,000,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>3,000,000,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>3,000,000,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>3,000,000,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>3,000,000,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>3,000,000,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>3,000,000,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>3,000,000,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>3,000,000,000</span></p>
-                    <a class="last" href="#">Xem thêm &raquo;</a>
+                	
+                      <?php include "$_HTML_DIR/simvip.php";?>
                 </div><!-- End #middle-right1 -->
                 <div id="middle-right2" class="right sim-list"><!-- phần các đơn hàng mới *chỉ có phần này là fix chiều cao để chứa phần thông tin chạy lên -->
                    
@@ -147,58 +138,10 @@
         <div id="footer">
             <div id="footer-nav">
                 <p class="footer-nav-title">Sim số đẹp &ndash; giá sinh viên</p>
-                <div class="sim-list">
-                    <a class="first">Sim đẹp đặc biệt</a>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                     <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <a class="last" href="#">Xem thêm &raquo;</a>
-                </div>
-                <div class="sim-list">
-                    <a class="first">Sim đẹp đặc biệt</a>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                     <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <a class="last" href="#">Xem thêm &raquo;</a>
-                </div>
-                <div class="sim-list">
-                    <a class="first">Sim đẹp đặc biệt</a>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                     <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <a class="last" href="#">Xem thêm &raquo;</a>
-                </div>
-                <div class="sim-list">
-                    <a class="first">Sim đẹp đặc biệt</a>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                     <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <p><a href="#">0987 654 321</a><span>160,000</span></p>
-                    <a class="last" href="#">Xem thêm &raquo;</a>
-                </div>
+                <?php include "$_HTML_DIR/simreViettel.php";?>
+                <?php include "$_HTML_DIR/simreMobi.php";?>
+                 <?php include "$_HTML_DIR/simreVina.php";?>
+                  <?php include "$_HTML_DIR/simreVmobi.php";?>
                 <div class="adv"><!-- Phần này chứa các flash quảng cáo -->
                     <embed height="120" width="210" type="application/x-shockwave-flash" 
                            src="images/adv.swf" 

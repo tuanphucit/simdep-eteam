@@ -1,5 +1,5 @@
 <div id="middle-right3"><!-- pháº§n tin tá»©c -->
-                    <p class="title">Tin khuyáº¿n máº¡i</p>
+                    <p class="title">Tin khuyến mãi</p>
 <?
 if(!$_PAGE_VALID)
 {
