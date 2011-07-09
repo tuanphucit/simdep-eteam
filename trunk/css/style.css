@@ -55,10 +55,10 @@ textarea
 button 
 {
 	width: 94px;
-	height: 23px;
-	font-size: 11px;
-	color:#fe0002;
-	font-weight: bold;
+	height: 28px;
+	font-size: 13px;
+	font-weight:bold;
+	
 	font-family: , Helvetica, sans-serif;
 	border: 0px;
 	background-image: url(../images/submit_nhantin.jpg);
