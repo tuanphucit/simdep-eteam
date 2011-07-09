@@ -140,11 +140,23 @@ $contentTitle = "".$define["var_danhsachsodep"]." ".$subPageTitle."";
 	$kieusim="Từ 50 Triệu trở lên";
 	$conds="(giaxuat >= 50000000)";
 	break;
-	
-	//danh muc sim
-	case '40':
-	$kieusim="Số Đẹp Giá Rẻ";
-	$conds="(giaxuat <= 300000)";
+	//protnc@gmail.com
+	//danh muc sim re 
+	case '52':
+	$kieusim="Số Đẹp Giá Rẻ Viettel";
+	$conds="(giaxuat <= 300000)AND (left(sosim,3)='097'OR left(sosim,3)='098' OR left(sosim,4)='0165' OR left(sosim,4)='0166' OR left(sosim,4)='0167' OR left(sosim,4)='0168' OR left(sosim,4)='0169')";
+	break;
+	case '53':
+	$kieusim="Số Đẹp Giá Rẻ Mobile";
+	$conds="(giaxuat <= 300000)AND (left(sosim,3)='090'OR left(sosim,3)='093' OR left(sosim,4)='0120' OR left(sosim,4)='0121' OR left(sosim,4)='0122' OR left(sosim,4)='0126' OR left(sosim,4)='0128')";
+	break;
+	case '54':
+	$kieusim="Số Đẹp Giá Rẻ Vinaphone";
+	$conds="(giaxuat <= 300000)AND (left(sosim,3)='091'OR left(sosim,3)='094' OR left(sosim,4)='0123' OR left(sosim,4)='0125' OR left(sosim,4)='0127')";
+	break;
+	case '55':
+	$kieusim="Số Đẹp Giá Rẻ VietnamMobile";
+	$conds="(giaxuat <= 300000)AND (left(sosim,3)='092' OR left(sosim,4)='0188')";
 	break;
 	case '13':
 	$conds="(right(sosim, 2)=left(right(sosim,4),2) AND left(right(sosim,2),1)=left(right(sosim,3),1))";
@@ -323,6 +335,7 @@ $contentTitle = "".$define["var_danhsachsodep"]." ".$subPageTitle."";
 	{
 	$contentDetail .= noResultPage();
 	}
+	$contentDetail2=$contentDetail;
 	require_once("$_HTML_DIR/center_product_list.php");
 }
 ?>

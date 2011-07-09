@@ -5,8 +5,8 @@ if(!$_PAGE_VALID)
 }
 $sql = new mysql;
 $froms = "product";
-$conds="(giaxuat >= 50000000)";
-$others = "ORDER BY giaxuat DESC LIMIT 10";
+$conds="(giaxuat <= 300000)AND (left(sosim,3)='091'OR left(sosim,3)='094' OR left(sosim,4)='0123' OR left(sosim,4)='0125' OR left(sosim,4)='0127')";
+$others = "ORDER BY giaxuat LIMIT 10";
 $sql->set_query($froms, "DISTINCT sosim", $conds, $others);
 $titemR = $sql->nRows;
 $counttt =0;
@@ -32,7 +32,7 @@ while($sql->set_farray())
 					}
 				$Linksim = "$_URL_BASE/index.php/order/$productId/sim-so-dep-$productName.html";
 			 
-				$listsimvip .= '	<p>
+				$listsimreVina .= '	<p>
 									<a href="'.$Linksim.'" >'.$productName.'</a>
 									<span>'.$price.'</span>
 									</p>
@@ -41,8 +41,8 @@ while($sql->set_farray())
 				}
 		?>
 
-				<div id="middle-right3" >
-				<a class="first">Sim đẹp đặc biệt</a>
-					<?=$listsimvip?>
-				 <a class="last" href="<?=$_URL_BASE?>/index.php/51/sim-dep-dac-biet">Xem thêm &raquo;</a>	
+				<div class="sim-list" >
+				<a class="first">Sim rẻ Vinaphone</a>
+					<?=$listsimreVina?>
+				 <a class="last" href="<?=$_URL_BASE?>/index.php/54/sim-re-Vinaphone">Xem thêm &raquo;</a>	
 				</div>

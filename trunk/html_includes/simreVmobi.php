@@ -5,8 +5,8 @@ if(!$_PAGE_VALID)
 }
 $sql = new mysql;
 $froms = "product";
-$conds="(giaxuat >= 50000000)";
-$others = "ORDER BY giaxuat DESC LIMIT 10";
+$conds="(giaxuat <= 300000)AND (left(sosim,3)='092' OR left(sosim,4)='0188')";
+$others = "ORDER BY giaxuat LIMIT 10";
 $sql->set_query($froms, "DISTINCT sosim", $conds, $others);
 $titemR = $sql->nRows;
 $counttt =0;
@@ -32,7 +32,7 @@ while($sql->set_farray())
 					}
 				$Linksim = "$_URL_BASE/index.php/order/$productId/sim-so-dep-$productName.html";
 			 
-				$listsimvip .= '	<p>
+				$listsimreVmobi .= '	<p>
 									<a href="'.$Linksim.'" >'.$productName.'</a>
 									<span>'.$price.'</span>
 									</p>
@@ -41,8 +41,8 @@ while($sql->set_farray())
 				}
 		?>
 
-				<div id="middle-right3" >
-				<a class="first">Sim đẹp đặc biệt</a>
-					<?=$listsimvip?>
-				 <a class="last" href="<?=$_URL_BASE?>/index.php/51/sim-dep-dac-biet">Xem thêm &raquo;</a>	
+				<div class="sim-list" >
+				<a class="first">Sim rẻ Vietnammobile</a>
+					<?=$listsimreVmobi?>
+				 <a class="last" href="<?=$_URL_BASE?>/index.php/55/sim-re-Vietnammobile">Xem thêm &raquo;</a>	
 				</div>
