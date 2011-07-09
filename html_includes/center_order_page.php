@@ -24,54 +24,53 @@ function doContactSubmit()
 	return true;
 }
 </script>
-<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
-	<tr>
-		<td align="center" valign="top">
-			<table width="100%" align="center" cellpadding="0" cellspacing="0">
-				<tr>
-					<td height="26px;" class="subPageTitle" ><?=$subPageTitle?></td>
-				</tr>
-				<tr>
-					<td style="background-image:url(<?=$_IMG_DIR?>/pagetitle_1.gif); background-repeat:repeat-y; padding-bottom:8" width="100%" valign="top">
+
+<div id="middle-content">	
+			
 <?
 if($doAction == 'send' && $isSent == 1)
 {
 ?>
+		<!-- Confirm area -->
 						<table width="98%" height="100" align="center" cellpadding="0" cellspacing="0">
+							<tr>
+										 <p class="sim-detail-box-title">Thông tin đơn hàng</p>
+									</tr>
+									<tr>&nbsp</tr>
 							<tr>
 								<td valign="top" style="padding:6 ">
 								<table width="98%" align="center" cellpadding="3" cellspacing="0" border="0">
 									<tr>
-										<td width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_sanphamchonmua"]?>:</td>
-										<td style="border:1px solid #c4c4c4;color:#FE0002"><?=$product?></td>
+										<td width="30%" nowrap style="font-size:13px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_sanphamchonmua"]?>:</td>
+										<td style="border:1px solid #c4c4c4;color:#CC3414"><?=$product?></td>
 									</tr>
 									<tr>
-										<td width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_gia"]?>:</td>
-										<td style="border:1px solid #c4c4c4;color:#FE0002"><?=$price?></td>
+										<td width="30%" nowrap style="font-size:13px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_gia"]?>:</td>
+										<td style="border:1px solid #c4c4c4;color:#CC3414"><?=$price?></td>
 									</tr>
 									<tr>
-										<td align="right" width="20%" nowrap style="font-size:11px; border:1px solid #c4c4c4;" class="itemname"><?=$define["var_hoten"]?> : </td>
-										<td style="border:1px solid #c4c4c4;color:#FE0002 "><?=$nname?></td>
+										<td align="right" width="30%" nowrap style="font-size:13px; border:1px solid #c4c4c4;" class="itemname"><?=$define["var_hoten"]?> : </td>
+										<td style="border:1px solid #c4c4c4;color:#CC3414 "><?=$nname?></td>
 									</tr>
 									<tr>
-										<td align="right" width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_diachi"]?> :</td>
-										<td style="border:1px solid #c4c4c4;color:#FE0002"><?=$add?></td>
+										<td align="right" width="30%" nowrap style="font-size:13px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_diachi"]?> :</td>
+										<td style="border:1px solid #c4c4c4;color:#CC3414"><?=$add?></td>
 									</tr>
 									<tr>
-										<td align="right" width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_dienthoai"]?>: </td>
-										<td style="border:1px solid #c4c4c4;color:#FE0002"><?=$tel?></td>
+										<td align="right" width="30%" nowrap style="font-size:13px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_dienthoai"]?>: </td>
+										<td style="border:1px solid #c4c4c4;color:#CC3414"><?=$tel?></td>
 									</tr>
 									<tr>
-										<td align="right" width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_dienthoaiban"]?>: </td>
-										<td style="border:1px solid #c4c4c4;color:#FE0002 "><?=$teltable?></td>
+										<td align="right" width="30%" nowrap style="font-size:13px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_dienthoaiban"]?>: </td>
+										<td style="border:1px solid #c4c4c4;color:#CC3414 "><?=$teltable?></td>
 									</tr>
 									<tr>
-										<td align="right" width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_email"]?>: </td>
-										<td style="border:1px solid #c4c4c4;color:#FE0002 "><?=$email?></td>
+										<td align="right" width="30%" nowrap style="font-size:13px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_email"]?>: </td>
+										<td style="border:1px solid #c4c4c4;color:#CC3414 "><?=$email?></td>
 									</tr>
 									<tr>
-										<td align="right" width="20%" style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_noidungyeucau"]?> : </td>
-										<td style="border:1px solid #c4c4c4;color:#FE0002 "><?=$detail?></td>
+										<td align="right" width="30%" style="font-size:13px;border:1px solid #c4c4c4;" class="itemname">Nội dung khác: </td>
+										<td style="border:1px solid #c4c4c4;color:#CC3414 "><?=$detail?></td>
 									</tr>
 									</table>
 								</td>
@@ -80,42 +79,56 @@ if($doAction == 'send' && $isSent == 1)
 								<td align="center" class="itemname"><?=$thongbaothanhcong?></td>
 							</tr>
 						</table>
+						<!-- Confirm area -->
 <?
 }else
 {
-?>						<div class="itemName" style="padding:5px 4px 5px 4px;"><?=$contentDetail?></div>
+?>					
+
+			<!-- ORDER inFomation -->
 						<div id="myContactForm" style="text-align:center">
 							<form name="frmContact" action="<?=$_URL_BASE?>/index.php/order" method="post" onSubmit="return doContactSubmit()">
 								<input type="hidden" name="itemId" value="<?=$itemId?>" />
-								<table width="90%" align="center" cellpadding="3" cellspacing="0" border="0">
+								<table width="80%" align="center" cellpadding="3" cellspacing="0" border="0" style="margin-left: 15px;">
 									<tr>
-										<td width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_sanphamchonmua"]?>:</td>
-										<td style="border:1px solid #c4c4c4; font-weight:bold" class="itemname"><?=$product?></td>
+										 <p class="sim-detail-box-title">Thông tin đơn hàng</p>
+									</tr>
+									<tr>&nbsp</tr>
+									<tr>
+										
+										 <div class="type">
+				                            Bộ gõ
+				                            <input name="type" type="radio" onclick="Mudim.SetMethod(0);" checked />Tắt
+				                            <input name="type" type="radio" onclick="Mudim.SetMethod(1);" />VNI
+				                            <input name="type" type="radio" onclick="Mudim.SetMethod(2);" />Telex
+				                            <input name="type" type="radio" onclick="Mudim.SetMethod(3);" />Viqr
+				                            <input name="type" type="radio" onclick="Mudim.SetMethod(4);" />Tổng hợp
+				                            <input name="type" type="radio" onclick="Mudim.SetMethod(5);" />Tự động
+				                        </div>
+									</tr>
+									<tr>&nbsp</tr>
+									<tr>
+										<td width="30%" nowrap style="font-size:13px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_sanphamchonmua"]?>:</td>
+										<td style="border:1px solid #c4c4c4; font-weight:bold ;margin-top:13px" class="itemname"><?=$product?></td>
 									</tr>
 									<tr>
-										<td width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_gia"]?>:</td>
-										<td style="border:1px solid #c4c4c4; font-weight:bold" class="itemname"><?=$price?>VN&#272;</td>
+										<td width="30%" nowrap style="font-size:13px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_gia"]?>:</td>
+										<td style="border:1px solid #c4c4c4; font-weight:bold;margin-top:13px" class="itemname"><?=$price?>VN&#272;</td>
 									</tr>
+												
 									<tr>
-										<td width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname" colspan="2" ><?=$define["var_bogotiengviet"]?>:
-												<span style="padding-left:25px">B&#7853;t<input type="radio" name="typeMode"  onClick="setTypingMode(1)">
-												&nbsp;&nbsp;T&#7855;t<input type="radio" name="typeMode"  onClick="setTypingMode()" checked>
-												</span>
-										</td>
-									</tr>			
-									<tr>
-										<td align="right" width="20%" nowrap style="font-size:11px; border:1px solid #c4c4c4;" class="itemname"><?=$define["var_hoten"]?> :* </td>
-										<td style="border:1px solid #c4c4c4; "><input name="nname" maxlength="100" class="textbox" value="<?=$nname?>" style="width:220px; height:18px" onKeyUp="telexingVietUC(this)"></td>
+										<td align="right" width="30%" nowrap style="font-size:13px; border:1px solid #c4c4c4;" class="itemname"><?=$define["var_hoten"]?> :* </td>
+										<td style="border:1px solid #c4c4c4;margin-top:13px "><input name="nname" maxlength="100" class="textbox" value="<?=$nname?>" style="width:255px; height:21px" onKeyUp="telexingVietUC(this)"></td>
 									</tr>
 									
 									<tr>
-										<td align="right" width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_diachi"]?> :*</td>
-										<td style="border:1px solid #c4c4c4;"><input name="add" maxlength="255" class="textbox" value="<?=$add?>" style="width:220px; height:18px" onKeyUp="telexingVietUC(this)"></td>
+										<td align="right" width="30%" nowrap style="font-size:13px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_diachi"]?> :*</td>
+										<td style="border:1px solid #c4c4c4;margin-top:13px"><input name="add" maxlength="255" class="textbox" value="<?=$add?>" style="width:255px; height:21px" onKeyUp="telexingVietUC(this)"></td>
 									</tr>
 									<tr>
-										<td align="right" width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_tinhthanh"]?> : </td>
+										<td align="right" width="30%" nowrap style="font-size:13px;border:1px solid #c4c4c4;margin-top:13px" class="itemname"><?=$define["var_tinhthanh"]?> : </td>
 										<td style="border:1px solid #c4c4c4;">
-											<select name="fax" style="overflow:auto; width:220;" class="textbox" size="1">
+											<select name="fax" style="overflow:auto; width:255px;" class="textbox" size="1">
 																			<option value="An Giang" value="<?=$imgnote?>" selected="selected">An Giang</option>
 																			<option value="B&#7855;c Giang" >B&#7855;c Giang</option>
 																			<option value="B&#7855;c K&#7841;n">B&#7855;c K&#7841;n</option>
@@ -150,7 +163,7 @@ if($doAction == 'send' && $isSent == 1)
 																			<option value="kh&#225;nh Ho&#224;">kh&#225;nh Ho&#224;</option>
 																			<option value="Ki&#234;n Giang">Ki&#234;n Giang</option>
 																			<option value="Kon Tum">Kon Tum</option>
-																			<option value="Lai Ch�u">Lai CH&#226;u</option>
+																			<option value="Lai Ch�u">Lai CH&#226;u</option>
 																			<option value="L&#226;m &#272;&#7891;ng">L&#226;m &#272;&#7891;ng</option>
 																			<option value="L&#7841;ng S&#417;n">L&#7841;ng S&#417;n</option>
 																			<option value="L&#224;o Cai">L&#224;o Cai</option>
@@ -183,16 +196,16 @@ if($doAction == 'send' && $isSent == 1)
 																</td>		
 									</tr>
 									<tr>
-										<td align="right" width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_dienthoai"]?> :* </td>
-										<td style="border:1px solid #c4c4c4; "><input name="tel" maxlength="20" class="textbox" value="<?=$tel?>" style="width:220px; height:18px" onKeyUp="telexingVietUC(this)"></td>
+										<td align="right" width="30%" nowrap style="font-size:13px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_dienthoai"]?> :* </td>
+										<td style="border:1px solid #c4c4c4;margin-top:13px "><input name="tel" maxlength="20" class="textbox" value="<?=$tel?>" style="width:255px; height:21px" onKeyUp="telexingVietUC(this)"></td>
 									</tr>
 									<tr>
-										<td align="right" width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_dienthoaiban"]?>: </td>
-										<td style="border:1px solid #c4c4c4; "><input name="teltable" maxlength="20" class="textbox" value="<?=$teltable?>" style="width:220px; height:18px" onKeyUp="telexingVietUC(this)"></td>
+										<td align="right" width="30%" nowrap style="font-size:13px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_dienthoaiban"]?>: </td>
+										<td style="border:1px solid #c4c4c4;margin-top:13px "><input name="teltable" maxlength="20" class="textbox" value="<?=$teltable?>" style="width:255px; height:21px" onKeyUp="telexingVietUC(this)"></td>
 									</tr>
 									<tr>
-										<td align="right" width="20%" nowrap style="font-size:11px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_email"]?>: </td>
-										<td style="border:1px solid #c4c4c4; "><input name="email" maxlength="50" class="textbox" value="<?=$email?>" style="width:220px; height:18px" onKeyUp="telexingVietUC(this)"></td>
+										<td align="right" width="30%" nowrap style="font-size:13px;border:1px solid #c4c4c4;" class="itemname"><?=$define["var_email"]?>: </td>
+										<td style="border:1px solid #c4c4c4; margin-top:13px"><input name="email" maxlength="50" class="textbox" value="<?=$email?>" style="width:255px; height:21px" onKeyUp="telexingVietUC(this)"></td>
 									</tr>
 									
 									
@@ -200,17 +213,17 @@ if($doAction == 'send' && $isSent == 1)
 										<td colspan="2" style="border:1px solid #c4c4c4;">
 											<table width="100%" cellpadding="0" cellspacing="0" border="0">
 												<tr>
-													<td align="right" width="28%" nowrap valign="top" style="font-size:11px; padding:5px 0px 15px 0px" class="itemname"><?=$define["var_noidungyeucau"]?> : </td>
-													<td ><textarea name="detail" rows="7" class="textBox" style="width:220px" onKeyUp="telexingVietUC(this)"><?=$detail?></textarea></td>
+													<td align="right" width="28%" nowrap valign="top" style="font-size:13px; padding:5px 0px 15px 0px" class="itemname">Nội dung khác: </td>
+													<td ><textarea name="detail" rows="7" class="textBox" style="width:255px" onKeyUp="telexingVietUC(this)"><?=$detail?></textarea></td>
 												</tr>
 
-												<tr>
-													<td width="20%">&nbsp;</td>
-													<td nowrap style="padding-top:10px">
-														<button type="submit" name="sbmt"><?=$define["var_datmua"]?></button> &nbsp;&nbsp;
-														<button type="reset" name="rest"><?=$define["var_nhaplai"]?></button>
-													</td>
-												</tr>
+												<tr >
+											<td width="30%" align="center" style="margin-top:12px;">&nbsp;</td>
+											<td nowrap>
+												<button type="submit" name="sbmt"><?=$define["var_datmua"]?></button> &nbsp;&nbsp;
+												<button type="reset" name="rest"><?=$define["var_nhaplai"]?></button>
+											</td>
+									</tr>
 												<tr>
 													<td height="14"></td>
 												</tr>
@@ -225,12 +238,6 @@ if($doAction == 'send' && $isSent == 1)
 					<?
 					}
 					?>	
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr>
-			<td valign="top"><img src="<?=$_IMG_DIR?>/pagetitle_2.gif" border="0" /></td>
-		</tr>
-</table>
+				
+	</div>
+	
