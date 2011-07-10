@@ -29,8 +29,31 @@
                             <label>10 số</label>
                             <input type="radio" name="simLength" value = "2" />
                             <label>11 số</label>
-                            <input type="radio" name="simLength" value ="3"  checked />
+                            <input type="radio" name="simLength" value ="" checked  />
                             <label>Tất cả </label>
+							</div>
+							<div>
+						<select name="mang">
+								<option value= ""> Chọn mạng...</option>
+								<option value="viettel"> Viettel</option>
+								<option value="mobi"> Mobiphone</option>
+								<option value="vina"> Vinaphone</option>
+								<option value="vietnammobile"> Vietnammobile</option>
+							</select>
+						<select name="gia">
+								<option value= ""> Chọn khoảng giá...</option>
+								<option value="<500"> Dưới 500 ngàn</option>
+								<option value="500->1000"> 500 ngàn -> 1 triệu</option>
+								<option value="1->2"> 1 triệu -> 2 triệu</option>
+								<option value="2->5"> 2 triệu -> 5 triệu</option>
+								<option value="5->10"> 5 triệu -> 10 triệu</option>
+								<option value="10->20"> 10 triệu -> 20 triệu</option>
+								<option value="20->50"> 20 triệu -> 50 triệu</option>
+								<option value="50->100"> 50 triệu -> 100 triệu</option>
+								<option value=">100"> Trên 100 triệu </option>
+								
+							</select>
+						 
 
                     <!--        <input class="search-input" type="text" name="search" /> -->
                            <input class="search-button" type="submit" name="submit" value="Tìm kiếm" />
@@ -76,23 +99,25 @@
 
                     <a href="#">Sim Lộc Phát</a>
                     <a href="#">Sim Số Lặp</a>
-                    <a href="#">Sim năm sinh</a>
-                    <a href="#">Sim năm sinh</a>
+                    <a href="#">Sim Số Kép</a>
+                    <a href="#">Sim Đẹp Gánh Đảo</a>
 
+                    <!--<a href="#">Sim năm sinh</a>
                     <a href="#">Sim năm sinh</a>
                     <a href="#">Sim năm sinh</a>
                     <a href="#">Sim năm sinh</a>
-                    <a href="#">Sim năm sinh</a>
+					-->
                 </div>
                 <div class="top2-box top2-box2">
                     <p>Tìm nhanh theo giá tiền</p>
-                    <a href="#">1 triệu -> 2 triệu</a>
-                    <a href="#">2 triệu -> 5 triệu</a>
-                    <a href="#">5 triệu -> 10 triệu</a>
-                    <a href="#">10 triệu -> 20 triệu</a>
-                    <a href="#">20 triệu -> 50 triệu</a>
-                    <a href="#">50 triệu -> 100 triệu</a>
-                    <a href="#">> 100 triệu</a>
+					<a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=1">Dưới 1 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=1">1 triệu -> 2 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=2">2 triệu -> 5 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=5">5 triệu -> 10 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=10">10 triệu -> 20 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=20">20 triệu -> 50 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=50">50 triệu -> 100 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=100">> 100 triệu</a>
 
                 </div>
                 <div class="top2-box top2-box3">

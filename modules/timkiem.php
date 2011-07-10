@@ -26,7 +26,11 @@ $maxImgH = 165;
 
 $sim_length = $_POST['simLength'];
 
+$price = $_GET['price'];
 
+$mang = $_POST['mang'];
+
+$gia = $_POST['gia'];
 
 
 
@@ -84,15 +88,83 @@ $listParCate = $cateId;
 				}	
 
 		}
-
 	
-	if($sim_length == 1){
-		$conds .= " AND (left(sosim,2)='09')";
+	
+	if($gia != NULL){
+		if($gia =="<500")
+				{
+				$conds .= " AND (giaxuat <= 500000)";
+				}
+		if($gia =="500->1000")
+				{
+				$conds .= " AND (giaxuat >= 500000) AND (giaxuat <= 1000000)";
+	
+			}
+		if($gia =="1->2")
+				{
+				$conds .= " AND (giaxuat >= 1000000) AND (giaxuat <= 2000000)";
+				}
+		if($gia =="2->5")
+				{
+				$conds .= " AND (giaxuat >= 2000000) AND (giaxuat <= 5000000)";
+				}
+		if($gia =="5->10")
+				{
+				$conds .= " AND (giaxuat >= 5000000) AND (giaxuat <= 10000000)";
+				}
+		if($gia =="10->20")
+				{
+				$conds .= " AND (giaxuat >= 10000000) AND (giaxuat <= 20000000)";
+				}
+		if($gia =="20->50")
+				{
+				$conds .= " AND (giaxuat >= 20000000) AND (giaxuat <= 50000000)";
+				}
+		if($gia =="50->100")
+				{
+				$conds .= " AND (giaxuat >= 50000000) AND (giaxuat <= 100000000)";
+				}
+
+		if($gia ==">100")
+				{
+				$conds .= " AND (giaxuat >= 100000000)";
+				}
+
+
+}
+	if($mang != NULL){
+		if($mang == "viettel"){
+			$conds  .=" AND ((left(sosim,3)='097'OR left(sosim,3)='098' OR left(sosim,4)='0165' OR left(sosim,4)='0166' OR left(sosim,4)='0167' OR left(sosim,4)='0168' OR left(sosim,4)='0169'))";
+
+		}
+		if($mang == "mobi"){
+			$conds  .=" AND ((left(sosim,3)='090'OR left(sosim,3)='093' OR left(sosim,4)='0120' OR left(sosim,4)='0121' OR left(sosim,4)='0122' OR left(sosim,4)='0126' OR left(sosim,4)='0128'))";
+
+		}
+		if($mang == "vina"){
+			$conds  .=" AND ((left(sosim,3)='091'OR left(sosim,3)='094' OR left(sosim,4)='0123' OR left(sosim,4)='0125' OR left(sosim,4)='0127'))";
+
+		}
+		if($mang == "vietnammobile"){
+		$conds  .=" AND ((left(sosim,3)='092' OR left(sosim,4)='0188'))";
 
 	}
-	if($sim_lengh == 2){
-		$conds .= " AND (left(sosim,2)='01')";
+	}
+	if($sim_length != NULL){
+		if($sim_length == 1){
+			$conds .= " AND (left(sosim,2)='09')";
+
+		}	
+	
+		else if($sim_lengh == 2){
+			$conds .= " AND (left(sosim,2)='01')";
 		}
+		
+		}
+	//if($price == 1){
+	//	$conds .= " AND (giaxuat >= 100000) AND (giaxuat <= 500000)";
+	//}
+
 	if($chonmang != NULL)
 
 		{
