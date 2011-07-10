@@ -24,6 +24,10 @@ $maxImgW = 127;
 
 $maxImgH = 165;
 
+$sim_length = $_POST['simLength'];
+
+
+
 
 
 $listCateId = $cateId;
@@ -82,7 +86,13 @@ $listParCate = $cateId;
 		}
 
 	
+	if($sim_length == 1){
+		$conds .= " AND (left(sosim,2)='09')";
 
+	}
+	if($sim_lengh == 2){
+		$conds .= " AND (left(sosim,2)='01')";
+		}
 	if($chonmang != NULL)
 
 		{

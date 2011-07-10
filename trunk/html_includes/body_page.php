@@ -24,13 +24,18 @@
                 <div id="top1-left">
                     <form name="searchFrom" onSubmit="return doSubmitsearchForm()" action="<?=$_URL_BASE?>/index.php/timkiem" method="post">
                         <div>
-			<input type="text" id="searchKeyword" name="searchKeyword" value="<?=$define["var_nhaptukhoa"]?>" onblur="if(this.value=='')this.value='<?=$define["var_nhaptukhoa"]?>';" onfocus="if(this.value=='<?=$define["var_nhaptukhoa"]?>')this.value='';">
-
+			<input type="text" id="searchKeyword" name="searchKeyword" value="<?=$define["var_nhaptukhoa"]?>"onblur="if(this.value=='')this.value='<?=$define["var_nhaptukhoa"]?>';"onfocus="if(this.value=='<?=$define["var_nhaptukhoa"]?>')this.value='';">
+						 <input type="radio" name="simLength" value = "1"/>
+                            <label>10 số</label>
+                            <input type="radio" name="simLength" value = "2" />
+                            <label>11 số</label>
+                            <input type="radio" name="simLength" value ="3"  checked />
+                            <label>Tất cả </label>
 
                     <!--        <input class="search-input" type="text" name="search" /> -->
                            <input class="search-button" type="submit" name="submit" value="Tìm kiếm" />
                         </div>
-                        <div>
+                  <!--      <div>
                             <input type="radio" name="a" />
                             <label>10 số</label>
                             <input type="radio" name="b" />
@@ -38,7 +43,7 @@
                             <input type="radio" name="c" />
                             <label>Tất cả các loại</label>
 							
-                        </div>
+                        </div>-->
                     </form>
                     <p>* Để tìm sim bắt đầu bằng 0935, quý khách nhập vào <a href="#">0935*</a></p>
                     <p>* Để tìm sim có đuôi là 88 và có đầu số 098, nhập vào <a href="#">098*88</a></p>
@@ -64,13 +69,13 @@
 		   <div id="top2"><!-- phần này show ra các loại sim và đặt sim theo yêu cầu -->
                 <div class="top2-box top2-box1">
                     <p>Tìm nhanh theo loại</p>
-                    <a href="#">Sim năm sinh</a>
-                    <a href="#">Sim năm sinh</a>
-                    <a href="#">Sim năm sinh</a>
-                    <a href="#">Sim năm sinh</a>
+                    <a href="#">Sim Lục Quý</a>
+                    <a href="#">Sim Tứ Quý</a>
+                    <a href="#">Sim Số Tiến</a>
+                    <a href="#">Sim Thần Tài</a>
 
-                    <a href="#">Sim năm sinh</a>
-                    <a href="#">Sim năm sinh</a>
+                    <a href="#">Sim Lộc Phát</a>
+                    <a href="#">Sim Số Lặp</a>
                     <a href="#">Sim năm sinh</a>
                     <a href="#">Sim năm sinh</a>
 
@@ -81,14 +86,14 @@
                 </div>
                 <div class="top2-box top2-box2">
                     <p>Tìm nhanh theo giá tiền</p>
-                    <a href="#">10 triệu -> 50 triệu</a>
-                    <a href="#">10 triệu -> 50 triệu</a>
-                    <a href="#">10 triệu -> 50 triệu</a>
-                    <a href="#">10 triệu -> 50 triệu</a>
-                    <a href="#">10 triệu -> 50 triệu</a>
-                    <a href="#">10 triệu -> 50 triệu</a>
-                    <a href="#">10 triệu -> 50 triệu</a>
-                    <a href="#">10 triệu -> 50 triệu</a>
+                    <a href="#">1 triệu -> 2 triệu</a>
+                    <a href="#">2 triệu -> 5 triệu</a>
+                    <a href="#">5 triệu -> 10 triệu</a>
+                    <a href="#">10 triệu -> 20 triệu</a>
+                    <a href="#">20 triệu -> 50 triệu</a>
+                    <a href="#">50 triệu -> 100 triệu</a>
+                    <a href="#">> 100 triệu</a>
+
                 </div>
                 <div class="top2-box top2-box3">
                     <p>Tìm nhanh theo đầu số</p>
