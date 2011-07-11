@@ -3,7 +3,15 @@ if(!$_PAGE_VALID)
 {
 	exit();
 }
-$blockContent = NULL;
+$blockContent.= '<table width="100%" cellpadding="0" cellspacing="0" border="0" ;>
+							<tr height="26">
+								<td width="25" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold; text-align:center;background-color:#2D427B">STT</td>
+								<td width="70" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold; text-align:center;background:url(../images/frame_bg.gif)">'.$define["var_sosim"].'</td>
+								<td width="70" style="font-family:tahoma; font-size:11px;color:white; font-weight:bold;text-align:center;background:url(../images/frame_bg.gif)">'.$define["var_gia"].'</td>
+								<td width="70" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold;text-align:center;background:url(../images/frame_bg.gif)">'.$define["var_taikhoan"].'</td>
+								<td width="30" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold;text-align:center;background:url(../images/frame_bg.gif)">Đặt mua</td>
+							</tr>';
+	$count = 0;	
 $sql = new mysql;
 $conds = "language_id='".$lang."' AND homeblock_view = 1 ";
 $others = "ORDER BY homeblock_order ASC";
@@ -59,15 +67,7 @@ $oder = "ORDER BY thutu ASC, giaxuat DESC LIMIT $ngaunhien,".$config["site_Produ
 	
 	$sqql->set_query("product", "DISTINCT sosim", $cond, $others);
 	$tRows =$sqql->nRows;
-	$blockContent.= '<table width="100%" cellpadding="0" cellspacing="0" border="0" ;>
-							<tr height="26">
-								<td width="25" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold; text-align:center;background-color:#2D427B">STT</td>
-								<td width="70" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold; text-align:center;background:url(../images/frame_bg.gif)">'.$define["var_sosim"].'</td>
-								<td width="70" style="font-family:tahoma; font-size:11px;color:white; font-weight:bold;text-align:center;background:url(../images/frame_bg.gif)">'.$define["var_gia"].'</td>
-								<td width="70" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold;text-align:center;background:url(../images/frame_bg.gif)">'.$define["var_taikhoan"].'</td>
-								<td width="30" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold;text-align:center;background:url(../images/frame_bg.gif)">Đặt mua</td>
-							</tr>';
-	$count = 0;						
+						
 	while($sqql->set_farray())
 	{
 				$count ++;
@@ -138,13 +138,14 @@ $blockContent.= "
 				<tr height=\"24\">
 					<td width=\"25\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:13px;color:#000000; text-align:center;\">".$count."</td>
 					<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:13px;color:#000000; text-align:center;font-weight:bold\"><a href=\"".$Linkto."\" style=\"color:#0055A8 \" >".$productName."</a></td>
-					<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:arial; font-size:13px;color:#000000; text-align:center;\">".$price." (vn&#273;)</td>
+					<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:arial; font-size:13px;color:#000000; text-align:center;\">".$price." </td>
 					<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000;text-align:center;\">".$taihkoan."</td>
 					<td width=\"30\" style=\"border-right:0px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000; text-align:center;font-weight:bold\" class=\"datmua\"><a href=\"".$Linkto."\"><img src=\" ".$_IMG_DIR.'/cart_icon.png'."\"> </a></td>
 				</tr>";		
 	 }
-	$blockContent.='</table></td></tr><tr><td height="30" style="background-image:url('.$_IMG_DIR.'/pagetitle_1.gif); background-repeat:repeat-y; padding-left:5px;"><a href="#"  onclick="window.location.href=\''.$_URL_BASE.'/download/?id='.$moId.'\'"><img src="'.$_IMG_DIR.'/excel.gif" border="0" align="absmiddle" style="padding:0px 0px 4px 0px"></a><span style="text-align:right; padding-left:270px"><a style="text-align:right;color:#ff6603; font-weight:bold; font-family:tahoma" href="'.$_URL_BASE.'/index.php/'.$moId.'/'.$tabName.'">'.$define["var_tatca"].'</a></span></td></tr><tr><td valign="top" style="padding-bottom:10px"></td><tr></table>'; 
-}	
+	 
+}
+$blockContent.='</table></td></tr><tr><td height="30" style="background-image:url('.$_IMG_DIR.'/pagetitle_1.gif); background-repeat:repeat-y; padding-left:5px;"><span style="text-align:right; padding-left:270px"><a style="text-align:right;color:#ff6603; font-weight:bold; font-family:tahoma" href="'.$_URL_BASE.'/index.php/57/all-product">'.$define["var_tatca"].'</a></span></td></tr><tr><td valign="top" style="padding-bottom:10px"></td><tr></table>';	
 require_once("$_HTML_DIR/center_content_home.php");
 
 ?>

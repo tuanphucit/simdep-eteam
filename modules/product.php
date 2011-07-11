@@ -140,6 +140,10 @@ $contentTitle = "".$define["var_danhsachsodep"]." ".$subPageTitle."";
 	$kieusim="Từ 50 Triệu trở lên";
 	$conds="(giaxuat >= 50000000)";
 	break;
+	case '57':
+	$conds="";
+	
+	break;
 	//protnc@gmail.com
 	//danh muc sim re 
 	case '52':

@@ -6,7 +6,7 @@
             </div><!-- End #banner -->
             <div id="menu">
                 <ul>
-                    <li><a href="<?=$_URL_BASE?>/index.php">Trang chủ</a></li>
+                     <li><a href="<?=$_URL_BASE?>/index.php">Trang chủ</a></li>
                     <li><a href="<?=$_URL_BASE?>/index.php/8/Vinaphone">Vinaphone</a></li>
                     <li><a href="<?=$_URL_BASE?>/index.php/9/Mobifone">Mobiphone</a></li>
                     <li><a href="<?=$_URL_BASE?>/index.php/7/Viettel">Viettel</a></li>

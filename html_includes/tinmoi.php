@@ -8,7 +8,7 @@ if(!$_PAGE_VALID)
 $sql = new mysql;
 $froms = "vot_news";
 $conds = "language_id='".$lang."' AND news_view=1";
-$others = "ORDER BY news_date DESC,news_visited DESC LIMIT 5";
+$others = "ORDER BY news_date DESC,news_visited DESC LIMIT 9";
 $sql->set_query($froms, "*", $conds, $others);
 $count =0;
 while($sql->set_farray())
@@ -21,7 +21,7 @@ while($sql->set_farray())
 	$infoVisited = $sql->farray["news_visited"];
 	$detail = $sql->farray["news_detail"];
 	$posImg = strpos($detail,"img");
-	if($posImg == false){$str="$_IMG_DIR./noimage.jpg";}
+	if($posImg == false){$str="$_IMG_DIR/noimage.jpg";}
 	else{
 	$pos5 = $posImg+500;
 	$str3 = substr($detail,$posImg,$pos5);
@@ -37,7 +37,7 @@ while($sql->set_farray())
 	$linkto = "$_URL_BASE/index.php/$modId/$infoId/".str_replace(" ", "_", $sql->farray["news_name"]);
 	//$listnew .= "<div class=\"newnews\"><a  href=\"$linkto\">* $infoName</a></div>";
 	//$listnew .= "	<div><img src=\"$_IMG_DIR/line_newnews.jpg\" border=\"0\" style=\"margin:3px 0px 7px 0px\"></div>";
-	if($count < 5)
+	if($count < 9)
 	{
 ?>	<div class="news-box">
                        
