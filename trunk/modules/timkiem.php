@@ -1,3 +1,4 @@
+
 <?
 
 if(!$_PAGE_VALID)
@@ -14,7 +15,7 @@ $count = 1;
 
 $colWidth = round(100/$nCols);
 
-$maxRows = 75;
+$maxRows = 50;
 
 $searchKeyword1 = "`".$searchKeyword;
 
@@ -26,13 +27,13 @@ $maxImgH = 165;
 
 $sim_length = $_POST['simLength'];
 
-$price = $_GET['price'];
+
 
 $mang = $_POST['mang'];
 
 $gia = $_POST['gia'];
 
-
+$prices = $_POST['prices'];
 
 $listCateId = $cateId;
 
@@ -88,8 +89,7 @@ $listParCate = $cateId;
 				}	
 
 		}
-	
-	
+
 	if($gia != NULL){
 		if($gia =="<500")
 				{
@@ -100,6 +100,9 @@ $listParCate = $cateId;
 				$conds .= " AND (giaxuat >= 500000) AND (giaxuat <= 1000000)";
 	
 			}
+		if($gia == "<1"){
+				$conds .= "AND (giaxuat <= 1000000) ";
+		}
 		if($gia =="1->2")
 				{
 				$conds .= " AND (giaxuat >= 1000000) AND (giaxuat <= 2000000)";
@@ -225,7 +228,7 @@ $listParCate = $cateId;
 
 	//echo $conds;
 
-	$others = "ORDER BY id DESC";
+	$others = "ORDER BY giaxuat ASC";
 
 	$table = "
 		(

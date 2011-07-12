@@ -57,6 +57,7 @@ if(!$cateId)
 	$subPageTitle = $curPage;
 	$contentFile = "$_MOD_DIR/timnhanh.php";
 	}
+
 }
 else
 {
@@ -83,6 +84,6 @@ $rightFile = "$_HTML_DIR/right_page.php";
 require_once("$_HTML_DIR/begin_html_page.php");
 require_once("$_HTML_DIR/body_page.php");
 //require_once("$_HTML_DIR/end_html_page.php");
-include_once 'call.php';
+//include_once 'call.php';
 ?>
 
