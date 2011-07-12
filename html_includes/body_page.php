@@ -54,23 +54,99 @@
 								
 							</select>
 						 
-
-                    <!--        <input class="search-input" type="text" name="search" /> -->
                            <input class="search-button" type="submit" name="submit" value="Tìm kiếm" />
                         </div>
-                  <!--      <div>
-                            <input type="radio" name="a" />
-                            <label>10 số</label>
-                            <input type="radio" name="b" />
-                            <label>11 số</label>
-                            <input type="radio" name="c" />
-                            <label>Tất cả các loại</label>
-							
-                        </div>-->
+
                     </form>
                     <p>* Để tìm sim bắt đầu bằng 0935, quý khách nhập vào <a href="#">0935*</a></p>
                     <p>* Để tìm sim có đuôi là 88 và có đầu số 098, nhập vào <a href="#">098*88</a></p>
-                </div><!-- End #top1-left -->
+		<div>
+				<select name="linkExchange" onChange="window.location.href='<?=$_URL_BASE?>/index.php/timnhanh/'+this.value;" style="padding-top:3px;height:22px;color:#000000;width:90px;padding-left:4px; font-size:11px;font-family:tahoma">
+							<option value="">Vinaphone</option>
+							<option value="0949">Đầu 0949</option>
+							<option value="0948">Đầu 0948</option>
+							<option value="0947">Đầu 0947</option>
+							<option value="0946">Đầu 0946</option>
+							<option value="0945">Đầu 0945</option>
+							<option value="0944">Đầu 0944</option>
+							<option value="0943">Đầu 0943</option>
+							<option value="0942">Đầu 0942</option>
+							<option value="0919">Đầu 0919</option>
+							<option value="0918">Đầu 0918</option>
+							<option value="0917">Đầu 0917</option>
+							<option value="0916">Đầu 0916</option>
+							<option value="0915">Đầu 0915</option>
+							<option value="0914">Đầu 0914</option>
+							<option value="0913">Đầu 0913</option>
+							<option value="0912">Đầu 0912</option>
+							<option value="0129">Đầu 0129</option>
+							<option value="0127">Đầu 0127</option>
+							<option value="0125">Đầu 0125</option>
+							<option value="0123">Đầu 0123</option>
+						</select>
+						<select name="linkExchange" onChange="window.location.href='<?=$_URL_BASE?>/index.php/timnhanh/'+this.value;" style="padding-top:3px;height:22px;color:#000000;width:90px;padding-left:4px; font-size:11px;font-family:tahoma">
+							<option value="">Mobifone</option>
+							<option value="0939">Đầu 0939</option>
+							<option value="0938">Đầu 0938</option>
+							<option value="0937">Đầu 0937</option>
+							<option value="0936">Đầu 0936</option>
+							<option value="0935">Đầu 0935</option>
+							<option value="0934">Đầu 0934</option>
+							<option value="0933">Đầu 0933</option>
+							<option value="0932">Đầu 0932</option>
+							<option value="0909">Đầu 0909</option>
+							<option value="0908">Đầu 0908</option>
+							<option value="0907">Đầu 0907</option>
+							<option value="0906">Đầu 0906</option>
+							<option value="0905">Đầu 0905</option>
+							<option value="0904">Đầu 0904</option>
+							<option value="0903">Đầu 0903</option>
+							<option value="0902">Đầu 0902</option>
+							<option value="0128">Đầu 0128</option>
+							<option value="0126">Đầu 0126</option>
+							<option value="0122">Đầu 0122</option>
+							<option value="0121">Đầu 0121</option>
+						</select>
+						<select name="linkExchange" onChange="window.location.href='<?=$_URL_BASE?>/index.php/timnhanh/'+this.value;" style="padding-top:3px;height:22px;color:#000000;width:90px;padding-left:4px; font-size:11px;font-family:tahoma">
+							<option value="">Viettel</option>
+							<option value="0989">Đầu 0989</option>
+							<option value="0988">Đầu 0988</option>
+							<option value="0987">Đầu 0987</option>
+							<option value="0986">Đầu 0986</option>
+							<option value="0985">Đầu 0985</option>
+							<option value="0984">Đầu 0984</option>
+							<option value="0983">Đầu 0983</option>
+							<option value="0982">Đầu 0982</option>
+							<option value="0979">Đầu 0979</option>
+							<option value="0978">Đầu 0978</option>
+							<option value="0977">Đầu 0977</option>
+							<option value="0976">Đầu 0976</option>
+							<option value="0975">Đầu 0975</option>
+							<option value="0974">Đầu 0974</option>
+							<option value="0973">Đầu 0973</option>
+							<option value="0972">Đầu 0972</option>
+							<option value="0169">Đầu 0169</option>
+							<option value="0168">Đầu 0168</option>
+							<option value="0167">Đầu 0167</option>
+							<option value="0166">Đầu 0166</option>
+							<option value="0165">Đầu 0165</option>
+						</select>
+						<select name="linkExchange" onChange="window.location.href='<?=$_URL_BASE?>/index.php/timnhanh/'+this.value;" style="padding-top:3px;height:22px;color:#000000;width:100px;padding-left:4px; font-size:11px;font-family:tahoma">
+							<option value="">Vietnammobile</option>
+							<option value="0929">Đầu 0929</option>
+							<option value="0928">Đầu 0928</option>
+							<option value="0927">Đầu 0927</option>
+							<option value="0926">Đầu 0926</option>
+							<option value="0925">Đầu 0925</option>
+							<option value="0924">Đầu 0924</option>
+							<option value="0923">Đầu 0923</option>
+							<option value="0922">Đầu 0922</option>
+							<option value="0921">Đầu 0921</option>
+							<option value="0920">Đầu 0920</option>
+							<option value="0188">Đầu 0188</option>
+						</select>
+						</div>             
+			 </div><!-- End #top1-left -->
                 <div id="top1-right">
                     <img name="slideshow1" alt="slideshow" src="<?=$_IMG_DIR?>/slideshow1.gif" />
                     <img name="slideshow2" alt="slideshow" src="<?=$_IMG_DIR?>/slideshow2.gif" />
@@ -90,59 +166,45 @@
 
 
 		   <div id="top2"><!-- phần này show ra các loại sim và đặt sim theo yêu cầu -->
-                <div class="top2-box top2-box1">
+               <div class="top2-box top2-box1">
                     <p>Tìm nhanh theo loại</p>
-                    <a href="#">Sim Lục Quý</a>
-                    <a href="#">Sim Tứ Quý</a>
-                    <a href="#">Sim Số Tiến</a>
-                    <a href="#">Sim Thần Tài</a>
+                    <a href="<?=$_URL_BASE?>/index.php/13/sim-tu-quy">Sim Tứ Quý</a>
+                    <a href="<?=$_URL_BASE?>/index.php/20/sim-so-tien">Sim Số Tiến</a>
+                    <a href="<?=$_URL_BASE?>/index.php/17/sim-than-tai">Sim Thần Tài</a>
 
-                    <a href="#">Sim Lộc Phát</a>
-                    <a href="#">Sim Số Lặp</a>
-                    <a href="#">Sim Số Kép</a>
-                    <a href="#">Sim Đẹp Gánh Đảo</a>
+                    <a href="<?=$_URL_BASE?>/index.php/15/sim-loc-phat">Sim Lộc Phát</a>
+                    <a href="<?=$_URL_BASE?>/index.php/26/sim-kep">Sim Số Kép</a>
+                    <a href="<?=$_URL_BASE?>/index.php/21/sim-ganh-dao">Sim Gánh Đảo</a>
 
-                    <!--<a href="#">Sim năm sinh</a>
-                    <a href="#">Sim năm sinh</a>
-                    <a href="#">Sim năm sinh</a>
-                    <a href="#">Sim năm sinh</a>
-					-->
+                    <a href="<?=$_URL_BASE?>/index.php/14/sim-tam-hoa">Sim Tam Hoa</a>
+                    <a href="<?=$_URL_BASE?>/index.php/19/sim-taxi">Sim Taxi</a>
+                    <a href="<?=$_URL_BASE?>/index.php/16/sim-nam-sinh">Sim năm sinh</a>
+
                 </div>
                 <div class="top2-box top2-box2">
                     <p>Tìm nhanh theo giá tiền</p>
-					<a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=1">Dưới 1 triệu</a>
-                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=1">1 triệu -> 2 triệu</a>
-                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=2">2 triệu -> 5 triệu</a>
-                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=5">5 triệu -> 10 triệu</a>
-                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=10">10 triệu -> 20 triệu</a>
-                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=20">20 triệu -> 50 triệu</a>
-                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=50">50 triệu -> 100 triệu</a>
-                    <a href="<?=$_URL_BASE?>/index.php/timkiem.php?price=100">> 100 triệu</a>
+					<a href="<?=$_URL_BASE?>/index.php/45">Dưới 500 ngàn</a>
+                    <a href="<?=$_URL_BASE?>/index.php/44">500 ngàn -> 1 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/46">1 triệu -> 2 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/47">2 triệu -> 5 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/48">5 triệu -> 10 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/49">10 triệu -> 20 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/50">20 triệu -> 50 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/51">Trên 50 triệu</a>
 
                 </div>
-                <div class="top2-box top2-box3">
-                    <p>Tìm nhanh theo đầu số</p>
-                    <a href="#">Số đẹp 0123</a>
-                    <a href="#">Số đẹp 0123</a>
-                    <a href="#">Số đẹp 0123</a>
-                    <a href="#">Số đẹp 0123</a>
 
-                    <a href="#">Số đẹp 0123</a>
-                    <a href="#">Số đẹp 0123</a>
-                    <a href="#">Số đẹp 0123</a>
-                    <a href="#">Số đẹp 0123</a>
-                </div>
                 <div class="top2-box top2-box4">
-                    <a class="top2-box4-title" href="#">Đặt sim theo yêu cầu</a>
-                    <a href="#">Số đẹp 0123</a>
-                    <a href="#">Số đẹp 0123</a>
-                    <a href="#">Số đẹp 0123</a>
-                    <a href="#">Số đẹp 0123</a>
-
-                    <a href="#">Số đẹp 0123</a>
-                    <a href="#">Số đẹp 0123</a>
-                    <a href="#">Số đẹp 0123</a>
-                    <a href="#">Số đẹp 0123</a>
+                    <p> Hỗ Trợ trực tuyến</p>
+					
+					<a class="top2-box4-title" href="ymsgr:sendim?toanvuviet"> Mr.Toan
+					<img src="http://opi.yahoo.com/online?u=toanvuviet&m=g&t=2" border="0"/>
+					</a>
+					
+					<a class="top2-box4-title" href="ymsgr:sendim?loc8meng2"> Mr.Loc <br>
+					<img src="http://opi.yahoo.com/online?u=loc8meng1&m=g&t=2" border="0"/>
+					</a>
+					
                 </div>
             </div><!-- End #top2 -->
         </div><!-- End #header -->
@@ -174,15 +236,15 @@
                   <?php include "$_HTML_DIR/simreVmobi.php";?>
                 <div class="adv"><!-- Phần này chứa các flash quảng cáo -->
                     <embed height="120" width="210" type="application/x-shockwave-flash" 
-                           src="images/adv.swf" 
+                           src="<?=$_IMG_DIR?>/adv.swf" 
                            pluginspage="http://www.macromedia.com/go/getflashplayer" 
                            wmode="transparent" play="true" quality="high" />
                     <embed height="120" width="210" type="application/x-shockwave-flash" 
-                           src="images/adv.swf" 
+                           src="<?=$_IMG_DIR?>/adv.swf" 
                            pluginspage="http://www.macromedia.com/go/getflashplayer" 
                            wmode="transparent" play="true" quality="high" />
                     <embed height="120" width="210" type="application/x-shockwave-flash" 
-                           src="images/adv.swf" 
+                           src="<?=$_IMG_DIR?>/adv.swf" 
                            pluginspage="http://www.macromedia.com/go/getflashplayer" 
                            wmode="transparent" play="true" quality="high" />
                 </div>

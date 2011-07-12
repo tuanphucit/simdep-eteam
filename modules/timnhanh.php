@@ -6,12 +6,12 @@ if(!$_PAGE_VALID)
 $nCols = 4;
 $count = 1;
 $colWidth = round(100/$nCols);
-$maxRows = 75;
+$maxRows = 50;
 
 $searchKeyword = $url_array[1];
 $searchKeyword1 =  "`".$searchKeyword;
 	$conds = "view = 1 AND sosim LIKE '".$searchKeyword."%' || sosim LIKE '".$searchKeyword1."%'";
-	$others = "ORDER BY id DESC";
+	$others = "ORDER BY giaxuat DESC";
 	$sql->set_query("product", "DISTINCT sosim", $conds, $others);
 	
 	$searchResult = $tRows = $sql->nRows;	

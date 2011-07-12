@@ -7,7 +7,7 @@ if(!$cateId || !validGetVar($cateId))
 $nCols = 4;
 $count = 1;
 $colWidth = round(100/$nCols);
-$maxRows = 80;
+$maxRows = 50;
 
 $checked = array(0 => NULL, 1 => "checked");
 
@@ -140,10 +140,22 @@ $contentTitle = "".$define["var_danhsachsodep"]." ".$subPageTitle."";
 	$kieusim="Từ 50 Triệu trở lên";
 	$conds="(giaxuat >= 50000000)";
 	break;
-	case '57':
-	$conds="";
 	
+	/*case '57':
+	$kieusim = "Từ 100 triệu trở lên";
+	$conds = "(giaxuat >= 100 triệu)";
 	break;
+	
+	case '58':
+	$kieusim = " tu 50 triệu >> 100 triệu";
+	$conds = "(giaxuar >=50000000) AND (giaxuat <= 100000000)";
+	break;
+	
+	case '59':
+	$kieusim = "Dưới 1 triệu ";
+	$conds = "(giaxuat <= 1 triệu)";
+	break;
+	*/
 	//protnc@gmail.com
 	//danh muc sim re 
 	case '52':

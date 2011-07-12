@@ -1,4 +1,6 @@
 <script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script> 
+
+		alert('da nhan');
 	<link rel="stylesheet" type="text/css" href="http://static.flowplayer.org/tools/css/tooltip-generic.css"/>
 <script> 
 // execute your scripts when the DOM is ready. this is a good habit
