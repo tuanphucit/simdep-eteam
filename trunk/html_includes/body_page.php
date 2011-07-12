@@ -183,14 +183,14 @@
                 </div>
                 <div class="top2-box top2-box2">
                     <p>Tìm nhanh theo giá tiền</p>
-					<a href="<?=$_URL_BASE?>/index.php/45">Dưới 500 ngàn</a>
-                    <a href="<?=$_URL_BASE?>/index.php/44">500 ngàn -> 1 triệu</a>
-                    <a href="<?=$_URL_BASE?>/index.php/46">1 triệu -> 2 triệu</a>
-                    <a href="<?=$_URL_BASE?>/index.php/47">2 triệu -> 5 triệu</a>
-                    <a href="<?=$_URL_BASE?>/index.php/48">5 triệu -> 10 triệu</a>
-                    <a href="<?=$_URL_BASE?>/index.php/49">10 triệu -> 20 triệu</a>
-                    <a href="<?=$_URL_BASE?>/index.php/50">20 triệu -> 50 triệu</a>
-                    <a href="<?=$_URL_BASE?>/index.php/51">Trên 50 triệu</a>
+					<a href="<?=$_URL_BASE?>/index.php/45/duoi-500-ngan">Dưới 500 ngàn</a>
+                    <a href="<?=$_URL_BASE?>/index.php/44/tu-500-1-trieu">500 ngàn -> 1 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/46/tu-1-2-trieu">1 triệu -> 2 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/47/tu-2-5-trieu">2 triệu -> 5 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/48/tu-5-10-trieu">5 triệu -> 10 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/49/tu-10-trieu-20-trieu">10 triệu -> 20 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/50/tu-20-trieu-50-trieu">20 triệu -> 50 triệu</a>
+                    <a href="<?=$_URL_BASE?>/index.php/51/tu-50-trieu-tro-len">Trên 50 triệu</a>
 
                 </div>
 
