@@ -1,4 +1,4 @@
-<?
+﻿<?
 if(!$_PAGE_VALID)
 {
 	exit();
@@ -36,6 +36,7 @@ $searchKeyword1 =  "`".$searchKeyword;
 								<td width="100" style="font-family:tahoma; font-size:11px;color:#fd720b;font-weight:bold; text-align:center;background-color:#eeeeee">'.$define["var_sosim"].'</td>
 								<td width="100" style="font-family:tahoma; font-size:11px;color:#fd720b; font-weight:bold;text-align:center;background-color:#eeeeee">'.$define["var_gia"].'</td>
 								<td width="100" style="font-family:tahoma; font-size:11px;color:#fd720b;font-weight:bold;text-align:center;background-color:#eeeeee">'.$define["var_taikhoan"].'</td>
+								<td width="100" style="font-family:tahoma; font-size:11px;color:#fd720b;font-weight:bold;text-align:center;background-color:#eeeeee">Loại</td>
 								<td width="90" style="font-family:tahoma; font-size:11px;color:#fd720b;font-weight:bold;text-align:center;background-color:#eeeeee">'.$define["var_datmua"].'</td>
 							</tr>';
 		
@@ -50,6 +51,50 @@ $searchKeyword1 =  "`".$searchKeyword;
 				$productId = $opt->optionvalue("product", "id", "sosim='".$productName."'");
 				$productName = str_replace("`","",$productName);
 				$price = geld($opt->optionvalue("product", "giaxuat", "id='".$productId ."'"));
+				
+				
+				if(substr($productName,-4) > '1959' && substr($productName,-4) < '2011')
+					{
+					$loai = " Năm Sinh - Kỷ Niệm";
+					}
+				else if(substr($productName,-1)==substr($productName,-2,1) && substr($productName,-2,1) == substr($productName,-3,1) && substr($productName,-3,1) != substr($productName,-4,1))
+				{
+					$loai = "Tam Hoa - Tam Quý";
+				}
+				else if(substr($productName,-2)== '68' || substr($productName,-2)== '86' || substr($productName,-3)== '688'|| substr($productName,-2)== '886')
+				{
+					$loai = "Lộc Phát";
+				}
+				else if( (substr($productName,-2) == substr($productName,-4,2) && substr($productName,-4,2) == substr($productName,-6,2) && substr($productName,-1) != substr($productName,-2,1)) || ( substr($productName,-3) == substr($productName,-6,3) && substr($productName,-1) != substr($productName,-2,1)))
+				{
+					$loai = "Taxi";
+				}
+				else if(substr($productName,-1) == substr($productName,-2,1) && substr($productName,-3,1) == substr($productName,-4,1) && substr($productName,-2)!= substr($productName,-3,2))
+				{
+					$loai = "Số Kép 2 - Kép 3";
+				}
+				
+				
+				else if(substr($productName,-1) == substr($productName,-4,1) && substr($productName,-3,1) == substr($productName,-2,1) && substr($productName,-1) != substr($productName,-2,1))
+				{
+					$loai = "Gánh Đảo";
+				}
+				else if(substr($productName,-4) == '7997' || (substr($productName,-2) == '39' || substr($productName,-2) == '79' || substr($productName,-2) == '38' || substr($productName,-2) == '78' ) || substr($productName,-3) == '799' ||substr($productName,-3) == '399')
+					{
+					$loai = "Thần Tài";
+					}
+				else if(substr($productName,-2) == substr($productName,-4,2)  &&  substr($productName,-2,1)== substr($productName,-3,1) )
+					{
+					$loai = "Tứ Quý - Ngũ Quý";
+					}
+				else if(substr($productName,-1) == (substr($productName,-2,1)+1) && substr($productName,-3,1) == (substr($productName,-2,1)-1) )
+					{
+					$loai = "Số Tiến";
+					}
+				else {
+					$type =  $opt->optionvalue("product", "category", "id ='".$productId ."'");
+					$loai =  $opt->optionvalue("vot_modules","modules_name","modules_id = '".$type."'");
+				}
 				//$taihkoan = geld($opt->optionvalue("product", "taikhoan", "id='".$productId ."'"));
 				if(strlen($productName) > 3) 
 					{
@@ -112,6 +157,7 @@ $searchKeyword1 =  "`".$searchKeyword;
 											<td width=\"100\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000; text-align:center;font-weight:bold\"><a href=\"".$Linkto."\">".$productName."</a></td>
 											<td width=\"100\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:arial; font-size:11px;color:#000000; text-align:center;\">".$price." (vn&#273;)</td>
 											<td width=\"100\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000;text-align:center;\">".$taihkoan."</td>
+											<td width=\"100\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000;text-align:center;\">".$loai."</td>
 											<td width=\"90\" style=\"border-right:0px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000; text-align:center;font-weight:bold\" class=\"datmua\"><a href=\"".$Linkto."\">".$define["var_datmua"]."</a></td>
 										</tr>";		
 					if($count % $nCols == 0)

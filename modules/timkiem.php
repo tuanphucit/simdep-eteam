@@ -53,6 +53,8 @@ $listParCate = $cateId;
 		{
 			$searchKeyword = str_replace(".", "", $searchKeyword);
 			$searchKeyword = str_replace(" ", "", $searchKeyword);
+			
+			
 			if($chuoi == "chuoicuoi")
 
 				{
@@ -89,7 +91,7 @@ $listParCate = $cateId;
 				}	
 
 		}
-
+	
 	if($gia != NULL){
 		if($gia =="<500")
 				{
@@ -323,9 +325,48 @@ $listParCate = $cateId;
 
 				$price = geld($opt->optionvalue("product", "giaxuat", "id='".$productId ."'"));
 
-				$type =  $opt->optionvalue("product", "category", "id ='".$productId ."'");
-				$loai =  $opt->optionvalue("vot_modules","modules_name","modules_id = '".$type."'");
-				//$taihkoan = geld($opt->optionvalue("product", "taikhoan", "id='".$productId ."'"));
+					if(substr($productName,-4) > '1959' && substr($productName,-4) < '2011')
+					{
+					$loai = " Năm Sinh - Kỷ Niệm";
+					}
+				else if(substr($productName,-1)==substr($productName,-2,1) && substr($productName,-2,1) == substr($productName,-3,1) && substr($productName,-3,1) != substr($productName,-4,1))
+				{
+					$loai = "Tam Hoa - Tam Quý";
+				}
+				else if(substr($productName,-2)== '68' || substr($productName,-2)== '86' || substr($productName,-3)== '688'|| substr($productName,-2)== '886')
+				{
+					$loai = "Lộc Phát";
+				}
+				else if( (substr($productName,-2) == substr($productName,-4,2) && substr($productName,-4,2) == substr($productName,-6,2) && substr($productName,-1) != substr($productName,-2,1)) || ( substr($productName,-3) == substr($productName,-6,3) && substr($productName,-1) != substr($productName,-2,1)))
+				{
+					$loai = "Taxi";
+				}
+				else if(substr($productName,-1) == substr($productName,-2,1) && substr($productName,-3,1) == substr($productName,-4,1) && substr($productName,-2)!= substr($productName,-3,2))
+				{
+					$loai = "Số Kép 2 - Kép 3";
+				}
+				
+				
+				else if(substr($productName,-1) == substr($productName,-4,1) && substr($productName,-3,1) == substr($productName,-2,1) && substr($productName,-1) != substr($productName,-2,1))
+				{
+					$loai = "Gánh Đảo";
+				}
+				else if(substr($productName,-4) == '7997' || (substr($productName,-2) == '39' || substr($productName,-2) == '79' || substr($productName,-2) == '38' || substr($productName,-2) == '78' ) || substr($productName,-3) == '799' ||substr($productName,-3) == '399')
+					{
+					$loai = "Thần Tài";
+					}
+				else if(substr($productName,-2) == substr($productName,-4,2)  &&  substr($productName,-2,1)== substr($productName,-3,1) )
+					{
+					$loai = "Tứ Quý - Ngũ Quý";
+					}
+				else if(substr($productName,-1) == (substr($productName,-2,1)+1) && substr($productName,-3,1) == (substr($productName,-2,1)-1) )
+					{
+					$loai = "Số Tiến";
+					}
+				else {
+					$type =  $opt->optionvalue("product", "category", "id ='".$productId ."'");
+					$loai =  $opt->optionvalue("vot_modules","modules_name","modules_id = '".$type."'");
+				}
 
 				if(strlen($productName_dauchamcach) > 3) 
 
