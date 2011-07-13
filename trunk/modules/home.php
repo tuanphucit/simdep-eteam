@@ -9,6 +9,7 @@ $blockContent.= '<table width="100%" cellpadding="0" cellspacing="0" border="0" 
 								<td width="70" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold; text-align:center;background:url(../images/frame_bg.gif)">'.$define["var_sosim"].'</td>
 								<td width="70" style="font-family:tahoma; font-size:11px;color:white; font-weight:bold;text-align:center;background:url(../images/frame_bg.gif)">'.$define["var_gia"].'</td>
 								<td width="70" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold;text-align:center;background:url(../images/frame_bg.gif)">'.$define["var_taikhoan"].'</td>
+								<td width="70" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold; text-align:center;background-color:#2D427B">Loại </td>
 								<td width="30" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold;text-align:center;background:url(../images/frame_bg.gif)">Đặt mua</td>
 							</tr>';
 	$count = 0;	
@@ -77,8 +78,61 @@ $oder = "ORDER BY thutu ASC, giaxuat DESC LIMIT $ngaunhien,".$config["site_Produ
 				$productName1 = str_replace(".","",$productName);
 				$productName2 = str_replace(" ","",$productName1);
 				$price = geld($opt->optionvalue("product", "giaxuat", "id='".$productId ."'"));
-				//$taihkoan = geld($opt->optionvalue("product", "taikhoan", "id='".$productId ."'"));
+
+				$conds="(right(sosim, 2)=left(right(sosim,4),2) AND left(right(sosim,2),1)=left(right(sosim,3),1))";
 				
+				//$type =  $opt->optionvalue("product", "category", "id ='".$productId ."'");
+				//$loai =  $opt->optionvalue("vot_modules","modules_name","modules_id = '".$type."'");
+				//$taihkoan = geld($opt->optionvalue("product", "taikhoan", "id='".$productId ."'"));
+				//Tu quy 
+					
+	//so taxi				$conds="((right(sosim,2)=left(right(sosim,4),2) AND left(right(sosim,4),2) =left(right(sosim,6),2) AND right(sosim,1)!=left(right(sosim,2),1)) OR (right(sosim,3)=left(right(sosim,6),3) AND right(sosim,1)!=left(right(sosim,2),1)))";
+//	so tien				$conds="(right(sosim,1)=(left(right(sosim,2),1)+1) AND left(right(sosim,3),1) = (left(right(sosim,2),1)-1))";
+//	so kep				$conds="( (right(sosim,1)=left(right(sosim,2),1) && left(right(sosim,3),1)=left(right(sosim,4),1)) && (right(sosim,2)!=left(right(sosim,3),2)))";
+//	nam sinh				$conds="(right(sosim,4) > '1959' AND right(sosim,4) < '2010')";
+//	ganh dao				$conds="(right(sosim,1) = left(right(sosim,4),1) AND left(right(sosim,3),1) = left(right(sosim,2),1)) AND right(sosim,1) != left(right(sosim,2),1)";
+//	than tai				$conds="(right(sosim,4)='7997' || right(sosim,2) IN (39,79,38,78) || right(sosim,3) IN (799,399))";
+
+				// toanvv
+				if(substr($productName,-1)==substr($productName,-2,1) && substr($productName,-2,1) == substr($productName,-3,1) && substr($productName,-3,1) != substr($productName,-4,1))
+				{
+					$loai = "Tam Hoa - Tam Quý";
+				}
+				if(substr($productName,-2)== '68' || substr($productName,-2)== '86' || substr($productName,-3)== '688'|| substr($productName,-2)== '886')
+				{
+					$loai = "Lộc Phát";
+				}
+				if( (substr($productName,-2) == substr($productName,-4,2) && substr($productName,-4,2) == substr($productName,-6,2) && substr($productName,-1) != substr($productName,-2,1)) || ( substr($productName,-3) == substr($productName,-6,3) && substr($productName,-1) != substr($productName,-2,1)))
+				{
+					$loai = "Taxi";
+				}
+				if(substr($productName,-1) == substr($productName,-2,1) && substr($productName,-3,1) == substr($productName,-4,1) && substr($productName,-2)!= substr($productName,-3,2))
+				{
+					$loai = "Số kép 2 - kép 3";
+				}
+				
+				if(substr($productName,-4) > '1959' && substr($productName,-4) < '2011')
+					{
+					$loai = " Năm sinh - Kỷ niệm";
+					}
+				if(substr($productName,-1) == substr($productName,-4,1) && substr($productName,-3,1) == substr($productName,-2,1) && substr($productName,-1) != substr($productName,-2,1))
+				{
+					$loai = "Gánh đảo";
+				}
+				if(substr($productName,-4) == '7997' || (substr($productName,-2) == '39' || substr($productName,-2) == '79' || substr($productName,-2) == '38' || substr($productName,-2) == '78' ) || substr($productName,-3) == '799' ||substr($productName,-3) == '399')
+					{
+					$loai = "Thần Tài";
+					}
+				if(substr($productName,-2) == substr($productName,-4,2)  &&  substr($productName,-2,1)== substr($productName,-3,1) )
+					{
+					$loai = "Tứ Quý - Ngũ Quý";
+					}
+				if(substr($productName,-1) == (substr($productName,-2,1)+1) && substr($productName,-3,1) == (substr($productName,-2,1)-1) )
+					{
+					$loai = "Số tiến";
+					}
+				
+				//////////////logoooooooo
 				if(strlen($productName2) > 3) 
 					{
 					$logo = substr($productName2, 0, 3);
@@ -140,6 +194,7 @@ $blockContent.= "
 					<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:13px;color:#000000; text-align:center;font-weight:bold\"><a href=\"".$Linkto."\" style=\"color:#0055A8 \" >".$productName."</a></td>
 					<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:arial; font-size:13px;color:#000000; text-align:center;\">".$price." </td>
 					<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000;text-align:center;\">".$taihkoan."</td>
+					<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000;text-align:center;\">".$loai."</td>
 					<td width=\"30\" style=\"border-right:0px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000; text-align:center;font-weight:bold\" class=\"datmua\"><a href=\"".$Linkto."\"><img src=\" ".$_IMG_DIR.'/cart_icon.png'."\"> </a></td>
 				</tr>";		
 	 }
