@@ -281,6 +281,7 @@ $listParCate = $cateId;
 								<td width="70" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold; text-align:center;background:url('.$_IMG_DIR.'/frame_bg.gif)">'.$define["var_sosim"].'</td>
 								<td width="70" style="font-family:tahoma; font-size:11px;color:white; font-weight:bold;text-align:center;background:url('.$_IMG_DIR.'/frame_bg.gif)">'.$define["var_gia"].'</td>
 								<td width="70" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold;text-align:center;background:url('.$_IMG_DIR.'/frame_bg.gif)">'.$define["var_taikhoan"].'</td>
+								<td width="70" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold; text-align:center;background-color:#2D427B">Loai</td>
 								<td width="30" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold;text-align:center;background:url('.$_IMG_DIR.'/frame_bg.gif)">Đặt mua</td>
 							</tr>';
 
@@ -322,6 +323,8 @@ $listParCate = $cateId;
 
 				$price = geld($opt->optionvalue("product", "giaxuat", "id='".$productId ."'"));
 
+				$type =  $opt->optionvalue("product", "category", "id ='".$productId ."'");
+				$loai =  $opt->optionvalue("vot_modules","modules_name","modules_id = '".$type."'");
 				//$taihkoan = geld($opt->optionvalue("product", "taikhoan", "id='".$productId ."'"));
 
 				if(strlen($productName_dauchamcach) > 3) 
@@ -441,6 +444,7 @@ $listParCate = $cateId;
 										<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000; text-align:center;font-weight:bold\"><a href=\"".$Linkto."\">".$productName."</a></td>
 										<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:arial; font-size:13px;color:#000000; text-align:center;\">".$price." (vn&#273;)</td>
 										<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000;text-align:center;\">".$taihkoan."</td>
+										<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000;text-align:center;\">".$loai."</td>
 										<td width=\"30\" style=\"border-right:0px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000; text-align:center;font-weight:bold\" class=\"datmua\"><a href=\"".$Linkto."\"><img src=\" ".$_IMG_DIR.'/cart_icon.png'."\"> </a></td>
 									</tr>
 
