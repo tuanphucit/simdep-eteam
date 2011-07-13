@@ -202,7 +202,10 @@
 					</a>
 					
 					<a class="top2-box4-title" href="ymsgr:sendim?loc8meng2"> Mr.Loc <br>
-					<img src="http://opi.yahoo.com/online?u=loc8meng1&m=g&t=2" border="0"/>
+					<img src="http://opi.yahoo.com/online?u=loc8meng2&m=g&t=2" border="0"/>
+					</a>
+					<a class="top2-box4-title" href="ymsgr:sendim?svcoi"> Mr.Chung <br>
+					<img src="http://opi.yahoo.com/online?u=svcoi&m=g&t=2" border="0"/>
 					</a>
 					
                 </div>
