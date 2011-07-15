@@ -230,7 +230,7 @@ $listParCate = $cateId;
 
 	//echo $conds;
 
-	$others = "ORDER BY giaxuat ASC";
+	$others = "ORDER BY giaxuat DESC";
 
 	$table = "
 		(
@@ -325,7 +325,7 @@ $listParCate = $cateId;
 
 				$price = geld($opt->optionvalue("product", "giaxuat", "id='".$productId ."'"));
 
-					if(substr($productName,-4) > '1959' && substr($productName,-4) < '2011')
+				if(substr($productName,-4) > '1959' && substr($productName,-4) < '2011')
 					{
 					$loai = " Năm Sinh - Kỷ Niệm";
 					}
@@ -364,8 +364,7 @@ $listParCate = $cateId;
 					$loai = "Số Tiến";
 					}
 				else {
-					$type =  $opt->optionvalue("product", "category", "id ='".$productId ."'");
-					$loai =  $opt->optionvalue("vot_modules","modules_name","modules_id = '".$type."'");
+					$loai = "Sim dễ nhớ";
 				}
 
 				if(strlen($productName_dauchamcach) > 3) 

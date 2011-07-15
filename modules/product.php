@@ -16,7 +16,7 @@ $maxImgH = 165;
 
 $listCateId = $cateId;
 $listParCate = $cateId;
-
+$loai = NULL;
 if(!$itemId || !validGetVar($itemId))
 {
 	if(checkSubCate($cateId) > 0)
@@ -58,22 +58,18 @@ if(!$itemId || !validGetVar($itemId))
 	}
     $contentTitle = "".$define["var_danhsachsodep"]." ".$subPageTitle."";
 	$pageTitle = NULL;
-	/*$conds = "modules_id='".$cateId."'";
-	$sql->set_query("vot_modules", "*", $conds);
-	if($sql->set_farray())
-	{
-		$pageTitle = $sql->farray["modules_name"];
-		$proTypeImgTitle = $sql->farray["modules_icon"];
-		if(is_file("$_ROOT_PATH/$proTypeImgTitle"))
-		{
-			$pageTitle = '<img src="'."$_URL_BASE/$proTypeImgTitle".'" border="0" align="absmiddle">';
-		}
-	}*/
+
 	switch ($listCateId)
 {
 	case '28':
 	$kieusim="Đầu Số Vinaphone 091";
 	$conds="(left(right(sosim,10),3)='091')";
+	break;
+	
+	case '7':
+	$kieusim = "Sim Viettel";
+	$conds="(left(sosim,3)='097'OR left(sosim,3)='098' OR left(sosim,4)='0165' OR left(sosim,4)='0166' OR left(sosim,4)='0167' OR left(sosim,4)='0168' OR left(sosim,4)='0169')";
+	$loai = NULL;	
 	break;
 	case '29':
 	$kieusim="Đầu Số Mobifone 090";
@@ -206,13 +202,13 @@ if(!$itemId || !validGetVar($itemId))
 	$conds="(right(sosim,1)=(left(right(sosim,2),1)+1) AND left(right(sosim,3),1) = (left(right(sosim,2),1)-1))";
 	$kieusim="Số Tiến";
 	$order="ORDER by giaxuat DESC, left(right(sosim,9),4) ASC";
-	$loại = "Số Tiến";
+	$loai = "Số Tiến";
 	break;
 	case '26':
 	$conds="( (right(sosim,1)=left(right(sosim,2),1) && left(right(sosim,3),1)=left(right(sosim,4),1)) && (right(sosim,2)!=left(right(sosim,3),2)))";
 	$kieusim="Số Kép 2 - Kép 3";
 	$order="ORDER by giaxuat DESC, left(right(sosim,9),4) ASC";
-	$loại = "Kép 2 - Kép 3";
+	$loai = "Kép 2 - Kép 3";
 	break;
 	case '16':
 	$conds="(right(sosim,4) > '1959' AND right(sosim,4) < '2010')";
@@ -232,13 +228,10 @@ if(!$itemId || !validGetVar($itemId))
 	$order="ORDER by giaxuat DESC, right(sosim,2) DESC";
 	$loai = "Thần Tài - Ông Địa";
 	break;
-	/*case 'lap':
-	$conds="WHERE (right(sosim,2)=left(right(sosim,4),2) AND right(sosim,1)!=left(right(sosim,2),1) AND right(sosim,2) !=left(right(sosim,6),2))";
-	$kieusim="Số Lặp 2 - Lặp 3";
-	$order="ORDER by giaxuat DESC, left(right(sosim,9),4) ASC";
-	break;*/
+
 	default:
 		$conds = "category IN ('".$listCateId."') AND view=1";
+		$loai = NULL;
 		break;
 }
 
@@ -286,52 +279,50 @@ if(!$itemId || !validGetVar($itemId))
 				$price = geld($opt->optionvalue("product", "giaxuat", "id='".$productId ."'"));
 				
 				
-				
-				
-				if($loai == NULL){
-				if(substr($productName,-4) > '1959' && substr($productName,-4) < '2011')
+					if(substr($productName,-4) > '1959' && substr($productName,-4) < '2011')
+						{
+						$loai = " Năm Sinh - Kỷ Niệm";
+						}
+					else if(substr($productName,-1)==substr($productName,-2,1) && substr($productName,-2,1) == substr($productName,-3,1) && substr($productName,-3,1) != substr($productName,-4,1))
 					{
-					$loai = " Năm Sinh - Kỷ Niệm";
+						$loai = "Tam Hoa - Tam Quý";
 					}
-				else if(substr($productName,-1)==substr($productName,-2,1) && substr($productName,-2,1) == substr($productName,-3,1) && substr($productName,-3,1) != substr($productName,-4,1))
-				{
-					$loai = "Tam Hoa - Tam Quý";
-				}
-				else if(substr($productName,-2)== '68' || substr($productName,-2)== '86' || substr($productName,-3)== '688'|| substr($productName,-2)== '886')
-				{
-					$loai = "Lộc Phát";
-				}
-				else if( (substr($productName,-2) == substr($productName,-4,2) && substr($productName,-4,2) == substr($productName,-6,2) && substr($productName,-1) != substr($productName,-2,1)) || ( substr($productName,-3) == substr($productName,-6,3) && substr($productName,-1) != substr($productName,-2,1)))
-				{
-					$loai = "Taxi";
-				}
-				else if(substr($productName,-1) == substr($productName,-2,1) && substr($productName,-3,1) == substr($productName,-4,1) && substr($productName,-2)!= substr($productName,-3,2))
-				{
-					$loai = "Số Kép 2 - Kép 3";
-				}
-				
-				
-				 else if(substr($productName,-1) == substr($productName,-4,1) && substr($productName,-3,1) == substr($productName,-2,1) && substr($productName,-1) != substr($productName,-2,1))
-				{
-					$loai = "Gánh Đảo";
-				}
-				else if(substr($productName,-4) == '7997' || (substr($productName,-2) == '39' || substr($productName,-2) == '79' || substr($productName,-2) == '38' || substr($productName,-2) == '78' ) || substr($productName,-3) == '799' ||substr($productName,-3) == '399')
+					else if(substr($productName,-2)== '68' || substr($productName,-2)== '86' || substr($productName,-3)== '688'|| substr($productName,-2)== '886')
 					{
-					$loai = "Thần Tài";
+						$loai = "Lộc Phát";
 					}
-				else if(substr($productName,-2) == substr($productName,-4,2)  &&  substr($productName,-2,1)== substr($productName,-3,1) )
+					else if( (substr($productName,-2) == substr($productName,-4,2) && substr($productName,-4,2) == substr($productName,-6,2) && substr($productName,-1) != substr($productName,-2,1)) || ( substr($productName,-3) == substr($productName,-6,3) && substr($productName,-1) != substr($productName,-2,1)))
 					{
-					$loai = "Tứ Quý - Ngũ Quý";
+						$loai = "Taxi";
 					}
-				else if(substr($productName,-1) == (substr($productName,-2,1)+1) && substr($productName,-3,1) == (substr($productName,-2,1)-1) )
+					else if(substr($productName,-1) == substr($productName,-2,1) && substr($productName,-3,1) == substr($productName,-4,1) && substr($productName,-2)!= substr($productName,-3,2))
 					{
-					$loai = "Số tiến";
+						$loai = "Số Kép 2 - Kép 3";
 					}
-				else
-					$type =  $opt->optionvalue("product", "category", "id ='".$productId ."'");
-					$loai =  $opt->optionvalue("vot_modules","modules_name","modules_id = '".$type."'");
 					
-				}	
+					
+					else if(substr($productName,-1) == substr($productName,-4,1) && substr($productName,-3,1) == substr($productName,-2,1) && substr($productName,-1) != substr($productName,-2,1))
+					{
+						$loai = "Gánh Đảo";
+					}
+					else if(substr($productName,-4) == '7997' || (substr($productName,-2) == '39' || substr($productName,-2) == '79' || substr($productName,-2) == '38' || substr($productName,-2) == '78' ) || substr($productName,-3) == '799' ||substr($productName,-3) == '399')
+						{
+						$loai = "Thần Tài";
+						}
+					else if(substr($productName,-2) == substr($productName,-4,2)  &&  substr($productName,-2,1)== substr($productName,-3,1) )
+						{
+						$loai = "Tứ Quý - Ngũ Quý";
+						}
+					else if(substr($productName,-1) == (substr($productName,-2,1)+1) && substr($productName,-3,1) == (substr($productName,-2,1)-1) )
+						{
+						$loai = "Số Tiến";
+						}
+					else {
+						$loai = "Sim dễ nhớ";
+					}
+				
+				
+					
 				//logo	
 				if(strlen($productName2) > 3) 
 					{

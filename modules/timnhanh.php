@@ -92,8 +92,8 @@ $searchKeyword1 =  "`".$searchKeyword;
 					$loai = "Số Tiến";
 					}
 				else {
-					$type =  $opt->optionvalue("product", "category", "id ='".$productId ."'");
-					$loai =  $opt->optionvalue("vot_modules","modules_name","modules_id = '".$type."'");
+					
+					$loai =  "Sim dễ nhớ ";
 				}
 				//$taihkoan = geld($opt->optionvalue("product", "taikhoan", "id='".$productId ."'"));
 				if(strlen($productName) > 3) 
@@ -158,7 +158,8 @@ $searchKeyword1 =  "`".$searchKeyword;
 											<td width=\"100\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:arial; font-size:11px;color:#000000; text-align:center;\">".$price." (vn&#273;)</td>
 											<td width=\"100\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000;text-align:center;\">".$taihkoan."</td>
 											<td width=\"100\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000;text-align:center;\">".$loai."</td>
-											<td width=\"90\" style=\"border-right:0px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000; text-align:center;font-weight:bold\" class=\"datmua\"><a href=\"".$Linkto."\">".$define["var_datmua"]."</a></td>
+											<td width=\"90\" style=\"border-right:0px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000; text-align:center;font-weight:bold\" class=\"datmua\"><a href=\"".$Linkto."\"><img src=\" ".$_IMG_DIR.'/cart_icon.png'."\"> </a></td>
+
 										</tr>";		
 					if($count % $nCols == 0)
 					{
