@@ -81,10 +81,11 @@ $oder = "ORDER BY thutu ASC, giaxuat DESC LIMIT $ngaunhien,".$config["site_Produ
 
 				$conds="(right(sosim, 2)=left(right(sosim,4),2) AND left(right(sosim,2),1)=left(right(sosim,3),1))";
 				
-				$type =  $opt->optionvalue("product", "category", "id ='".$productId ."'");
-				$loai =  $opt->optionvalue("vot_modules","modules_name","modules_id = '".$type."'");
+			//	$type =  $opt->optionvalue("product", "category", "id ='".$productId ."'");
+			//	$loai =  $opt->optionvalue("vot_modules","modules_name","modules_id = '".$type."'");
 				//$taihkoan = geld($opt->optionvalue("product", "taikhoan", "id='".$productId ."'"));
-				//Tu quy 
+				$loai = "Sim dễ nhớ";	
+			//Tu quy 
 					
 
 				// toanvv

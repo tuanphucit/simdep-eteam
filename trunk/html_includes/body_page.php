@@ -10,7 +10,7 @@
                     <li><a href="<?=$_URL_BASE?>/index.php/8/Vinaphone">Vinaphone</a></li>
                     <li><a href="<?=$_URL_BASE?>/index.php/9/Mobifone">Mobiphone</a></li>
                     <li><a href="<?=$_URL_BASE?>/index.php/7/Viettel">Viettel</a></li>
-                    <li><a href="<?=$_URL_BASE?>/index.php/index.php/41/Vietnamobile">Vietnamobile</a></li>
+                    <li><a href="<?=$_URL_BASE?>/index.php/41/Vietnamobile">Vietnamobile</a></li>
                     <li><a href="<?=$_URL_BASE?>/index.php/3/tin-tuc">Tin Tức</a></li>
                     <li><a href="<?=$_URL_BASE?>/index.php/2/huong-dan-mua-sim">Hướng dẫn mua sim</a></li>
 					<li><a href = "<?=$_URL_BASE?>/index.php/contact"> Liên hệ</a></li>
@@ -60,93 +60,8 @@
                     </form>
                     <p>* Để tìm sim bắt đầu bằng 0935, quý khách nhập vào <a href="#">0935*</a></p>
                     <p>* Để tìm sim có đuôi là 88 và có đầu số 098, nhập vào <a href="#">098*88</a></p>
-		<div>
-				<select name="linkExchange" onChange="window.location.href='<?=$_URL_BASE?>/index.php/timnhanh/'+this.value;" style="padding-top:3px;height:22px;color:#000000;width:90px;padding-left:4px; font-size:11px;font-family:tahoma">
-							<option value="">Vinaphone</option>
-							<option value="0949">Đầu 0949</option>
-							<option value="0948">Đầu 0948</option>
-							<option value="0947">Đầu 0947</option>
-							<option value="0946">Đầu 0946</option>
-							<option value="0945">Đầu 0945</option>
-							<option value="0944">Đầu 0944</option>
-							<option value="0943">Đầu 0943</option>
-							<option value="0942">Đầu 0942</option>
-							<option value="0919">Đầu 0919</option>
-							<option value="0918">Đầu 0918</option>
-							<option value="0917">Đầu 0917</option>
-							<option value="0916">Đầu 0916</option>
-							<option value="0915">Đầu 0915</option>
-							<option value="0914">Đầu 0914</option>
-							<option value="0913">Đầu 0913</option>
-							<option value="0912">Đầu 0912</option>
-							<option value="0129">Đầu 0129</option>
-							<option value="0127">Đầu 0127</option>
-							<option value="0125">Đầu 0125</option>
-							<option value="0123">Đầu 0123</option>
-						</select>
-						<select name="linkExchange" onChange="window.location.href='<?=$_URL_BASE?>/index.php/timnhanh/'+this.value;" style="padding-top:3px;height:22px;color:#000000;width:90px;padding-left:4px; font-size:11px;font-family:tahoma">
-							<option value="">Mobifone</option>
-							<option value="0939">Đầu 0939</option>
-							<option value="0938">Đầu 0938</option>
-							<option value="0937">Đầu 0937</option>
-							<option value="0936">Đầu 0936</option>
-							<option value="0935">Đầu 0935</option>
-							<option value="0934">Đầu 0934</option>
-							<option value="0933">Đầu 0933</option>
-							<option value="0932">Đầu 0932</option>
-							<option value="0909">Đầu 0909</option>
-							<option value="0908">Đầu 0908</option>
-							<option value="0907">Đầu 0907</option>
-							<option value="0906">Đầu 0906</option>
-							<option value="0905">Đầu 0905</option>
-							<option value="0904">Đầu 0904</option>
-							<option value="0903">Đầu 0903</option>
-							<option value="0902">Đầu 0902</option>
-							<option value="0128">Đầu 0128</option>
-							<option value="0126">Đầu 0126</option>
-							<option value="0122">Đầu 0122</option>
-							<option value="0121">Đầu 0121</option>
-						</select>
-						<select name="linkExchange" onChange="window.location.href='<?=$_URL_BASE?>/index.php/timnhanh/'+this.value;" style="padding-top:3px;height:22px;color:#000000;width:90px;padding-left:4px; font-size:11px;font-family:tahoma">
-							<option value="">Viettel</option>
-							<option value="0989">Đầu 0989</option>
-							<option value="0988">Đầu 0988</option>
-							<option value="0987">Đầu 0987</option>
-							<option value="0986">Đầu 0986</option>
-							<option value="0985">Đầu 0985</option>
-							<option value="0984">Đầu 0984</option>
-							<option value="0983">Đầu 0983</option>
-							<option value="0982">Đầu 0982</option>
-							<option value="0979">Đầu 0979</option>
-							<option value="0978">Đầu 0978</option>
-							<option value="0977">Đầu 0977</option>
-							<option value="0976">Đầu 0976</option>
-							<option value="0975">Đầu 0975</option>
-							<option value="0974">Đầu 0974</option>
-							<option value="0973">Đầu 0973</option>
-							<option value="0972">Đầu 0972</option>
-							<option value="0169">Đầu 0169</option>
-							<option value="0168">Đầu 0168</option>
-							<option value="0167">Đầu 0167</option>
-							<option value="0166">Đầu 0166</option>
-							<option value="0165">Đầu 0165</option>
-						</select>
-						<select name="linkExchange" onChange="window.location.href='<?=$_URL_BASE?>/index.php/timnhanh/'+this.value;" style="padding-top:3px;height:22px;color:#000000;width:100px;padding-left:4px; font-size:11px;font-family:tahoma">
-							<option value="">Vietnammobile</option>
-							<option value="0929">Đầu 0929</option>
-							<option value="0928">Đầu 0928</option>
-							<option value="0927">Đầu 0927</option>
-							<option value="0926">Đầu 0926</option>
-							<option value="0925">Đầu 0925</option>
-							<option value="0924">Đầu 0924</option>
-							<option value="0923">Đầu 0923</option>
-							<option value="0922">Đầu 0922</option>
-							<option value="0921">Đầu 0921</option>
-							<option value="0920">Đầu 0920</option>
-							<option value="0188">Đầu 0188</option>
-						</select>
-						</div>             
-			 </div><!-- End #top1-left -->
+				</div><!-- End #top1-left-->
+
                 <div id="top1-right">
                     <img name="slideshow1" alt="slideshow" src="<?=$_IMG_DIR?>/slideshow1.gif" />
                     <img name="slideshow2" alt="slideshow" src="<?=$_IMG_DIR?>/slideshow2.gif" />
@@ -194,20 +109,33 @@
 
                 </div>
 
+
+
+				<div class="top2-box top2-box3">
+                    <p>Tìm nhanh theo đầu số</p>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0912">Số đẹp 0912</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0913">Số đẹp 0913</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0914">Số đẹp 0914</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0915">Số đẹp 0915</a>
+
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0902">Số đẹp 0902</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0902">Số đẹp 0903</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0904">Số đẹp 0904</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0905">Số đẹp 0905</a>
+					
+					
+                </div>
                 <div class="top2-box top2-box4">
-                    <p> Hỗ Trợ trực tuyến</p>
-					
-					<a class="top2-box4-title" href="ymsgr:sendim?toanvuviet"> Mr.Toan
-					<img src="http://opi.yahoo.com/online?u=toanvuviet&m=g&t=2" border="0"/>
-					</a>
-					
-					<a class="top2-box4-title" href="ymsgr:sendim?loc8meng2"> Mr.Loc <br>
-					<img src="http://opi.yahoo.com/online?u=loc8meng2&m=g&t=2" border="0"/>
-					</a>
-					<a class="top2-box4-title" href="ymsgr:sendim?svcoi"> Mr.Chung <br>
-					<img src="http://opi.yahoo.com/online?u=svcoi&m=g&t=2" border="0"/>
-					</a>
-					
+                    <a class="top2-box4-title">Tìm nhanh </a>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0973">Số đẹp 0973</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0974">Số đẹp 0974</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0975">Số đẹp 0975</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0976">Số đẹp 0976</a>
+
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0922">Số đẹp 0922</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0928">Số đẹp 0928</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0929">Số đẹp 0929</a>
+                    <a href="<?=$_URL_BASE?>/index.php/timnhanh/0923">Số đẹp 0923</a>
                 </div>
             </div><!-- End #top2 -->
         </div><!-- End #header -->

@@ -1,0 +1,6 @@
+Options +FollowSymLinks
+
+RewriteEngine On
+RewriteBase /  
+RewriteRule ^timnhanh-([0-9]+).html$ index.php/timnhanh/0938
+RewriteRule ^timnhanh-sim-tu-quy.html$ index.php/13/
