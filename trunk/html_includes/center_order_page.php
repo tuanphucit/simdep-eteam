@@ -89,7 +89,7 @@ if($doAction == 'send' && $isSent == 1)
 						<div id="myContactForm" style="text-align:center">
 							<form name="frmContact" action="<?=$_URL_BASE?>/index.php/order" method="post" onSubmit="return doContactSubmit()">
 								<input type="hidden" name="itemId" value="<?=$itemId?>" />
-								<table width="80%" align="center" cellpadding="3" cellspacing="0" border="0" style="margin-left: 15px;">
+								<table width="95%" align="center" cellpadding="3" cellspacing="0" border="0" style="margin-left: 15px;">
 									<tr>
 										 <p class="sim-detail-box-title">Thông tin đơn hàng</p>
 									</tr>

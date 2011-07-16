@@ -15,7 +15,6 @@ body{
 }
 #banner{
     height: 130px;
-    background: white url(../images/banner.jpg) no-repeat top left;
     clear: both;
 }
 a{
@@ -192,9 +191,10 @@ img{
 
 /*-------#middle-content-------*/
 #middle-content{
-    width: 560px;
+    width: 540px;
     float: left;
     background: white;
+    padding:10px;
     
 }
 #middle-content2{
