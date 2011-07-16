@@ -76,7 +76,7 @@ select
 }
 ul
 {
-	text-align:justify;
+	text-align:justify;	margin-left:10px;
 }
 li
 {

@@ -1,8 +1,13 @@
-
+<?php 
+	$conds = "language_id = $lang AND html_id = 'pagebanner'";
+	$pageBanner = $opt->optionvalue("vot_html","html_detail",$conds);
+	$conds = "language_id = $lang AND html_id = 'footer'";
+	$pageBottom = $opt->optionvalue("vot_html","html_detail",$conds);
+?>
   <body>
         <div id="header">
             <div id="banner"><!-- Phần này đang để background -->
-
+				<?=$pageBanner?>
             </div><!-- End #banner -->
             <div id="menu">
                 <ul>
@@ -13,6 +18,7 @@
                     <li><a href="<?=$_URL_BASE?>/index.php/41/Vietnamobile">Vietnamobile</a></li>
                     <li><a href="<?=$_URL_BASE?>/index.php/3/tin-tuc">Tin Tức</a></li>
                     <li><a href="<?=$_URL_BASE?>/index.php/2/huong-dan-mua-sim">Hướng dẫn mua sim</a></li>
+                    <li><a href = "<?=$_URL_BASE?>/index.php/25/phong-thuy"> Phong thủy</a></li>
 					<li><a href = "<?=$_URL_BASE?>/index.php/contact"> Liên hệ</a></li>
 				
 					
@@ -180,15 +186,6 @@
                            wmode="transparent" play="true" quality="high" />
                 </div>
             </div><!-- End #footer-nav -->
-            <div id="footer-info"><!-- Phần cuối cùng của trang chứa tên trang web, bản quyền, thông tin địa chỉ ... -->
-                <div>
-                    <a class="no1" href="#">Trang chủ</a>
-                    <a class="no2">www.simsodep.com - Đẹp từ A đến Z</a>
-                    <a class="no3" href="#">Lên đầu trang &uArr;</a>
-                </div>
-                <p>Sim số đẹp từ A đến Z</p>
-                <p>Phát triển bới eTeam.vn</p>
-                <p>Địa chỉ : abc Hà Nội. Điện thoại : 0123456789</p>
-            </div><!-- End #footer-info -->
+            <?=$pageBottom?>
         </div><!-- End #footer -->
     </body>
