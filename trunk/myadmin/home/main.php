@@ -1,3 +1,35 @@
+﻿<div>
+  <form name="searchSim"  action="<?$_URL_BASE?>/myadmin/index.php?module=home" method="post">
+	  	<input type=  "text" name = "search_sim" >
+		<input type = "submit" value = "Search">
+	</form>
+</div>
+<?php
+	$search_sim = $_POST['search_sim'];
+
+	mysql_connect("localhost","root","root");
+	mysql_select_db("simsodep");
+	$cond = "SELECT * FROM `product` WHERE `sosim` LIKE '%".$search_sim."%' ";
+	$result = mysql_query($cond);
+	
+		echo '<table border="1">
+		<tr>
+		<th>Số Sim</th>
+		<th>Kho</th>
+
+		</tr>';
+	while($result1= mysql_fetch_array($result)){
+		//echo $result1["sosim"]; 
+		//echo $result1["kho"];echo "<br>";
+		echo "<tr>
+		<td>".$result1["sosim"]."</td>
+		<td>".$result1["kho"]."</td>
+
+		</tr>";
+	}
+
+		echo '</table>';
+?>
 <table width="90%" cellpadding="0" cellspacing="0" align="center">
 	<tr height="50"><td class="modulehead">Ch&#224;o m&#7915;ng qu&#7843;n tr&#7883; vi&#234;n <strong><?=$usrname?></strong>!</td></tr>
 	<tr>
