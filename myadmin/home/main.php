@@ -6,29 +6,238 @@
 </div>
 <?php
 	$search_sim = $_POST['search_sim'];
-
-	mysql_connect("localhost","root","root");
-	mysql_select_db("simsodep");
-	$cond = "SELECT * FROM `product` WHERE `sosim` LIKE '%".$search_sim."%' ";
-	$result = mysql_query($cond);
+	$search_sim = str_replace("*", "%", $search_sim);
+	if(count(explode("%",$search_sim)==1))
+		$search_sim = "%".$search_sim."%";
+	$cond = "SELECT *,REPLACE( sosim,'.','' ) FROM `product` WHERE `sosim` LIKE '".$search_sim."'";
 	
-		echo '<table border="1">
-		<tr>
-		<th>Số Sim</th>
-		<th>Kho</th>
+	if($search_sim != NULL){
+		mysql_connect("localhost","root","root");
+		mysql_select_db("simsodep");
 
-		</tr>';
-	while($result1= mysql_fetch_array($result)){
-		//echo $result1["sosim"]; 
-		//echo $result1["kho"];echo "<br>";
-		echo "<tr>
-		<td>".$result1["sosim"]."</td>
-		<td>".$result1["kho"]."</td>
+		$result = mysql_query($cond);
+		
+		echo $price;
+			echo '<table border="1">
+			<tr>
+			<th>Số Sim</th>
+			<th>Kho</th>
 
-		</tr>";
-	}
+			</tr>';
+			
+		while($result1= mysql_fetch_array($result)){
+			//echo $result1["sosim"]; 
+			//echo $result1["kho"];echo "<br>";
+			echo "<tr>
+			<td>".$result1["sosim"]."</td>
+			<td>".$result1["kho"]."</td>
 
-		echo '</table>';
+			</tr>";
+		}
+
+			echo '</table>';
+			$search_sim = NULL;
+		}
+		
+		$searchKeyword = $_POST['search_sim'];
+
+$nCols = 4;
+
+$count = 1;
+
+$colWidth = round(100/$nCols);
+
+$maxRows = 50;
+
+$searchKeyword = $_POST['search_sim'];
+$searchKeyword1 = "`".$searchKeyword;
+
+$checked = array(0 => NULL, 1 => "checked");
+
+$maxImgW = 127;
+
+$maxImgH = 165;
+
+
+	$subPageTitle = $define["var_ketquatimkiem"];
+
+	$conds = "view=1";
+
+	/*luckymancvp
+	 * 
+	 */
+	if($searchKeyword != $define["var_nhaptukhoa"])
+
+		{
+			$searchKeyword = str_replace(".", "", $searchKeyword);
+			$searchKeyword = str_replace(" ", "", $searchKeyword);
+			
+			
+			if($chuoi == "chuoicuoi")
+
+				{
+				
+				$conds .= " AND (sosim_dauchamcach LIKE '%".$searchKeyword."')";
+
+				}
+
+			else if($chuoi == "chuoidau")
+
+				{
+
+				$conds .= " AND (sosim_dauchamcach LIKE '".$searchKeyword."%' || sosim_dauchamcach LIKE '".$searchKeyword1."%')";
+
+				}
+
+			else
+
+				{
+					/*Luckymancvp
+					 * 
+					 */
+					
+				$searchKeyword = str_replace("*", "%", $searchKeyword);
+				if ( count(explode("%",$searchKeyword)) == 1)
+					$searchKeyword = "%".$searchKeyword."%";
+				$conds .= " AND (sosim_dauchamcach LIKE \"$searchKeyword\")";
+				/*echo "
+					<script>
+						alert('$conds');
+					</script>
+				";*/
+				
+				}	
+
+		}
+	
+	//echo $conds;
+	$others = "ORDER BY giaxuat DESC";
+
+	$table = "
+		(
+		SELECT * , REPLACE( REPLACE( sosim,  '.',  '' ) ,  ' ',  '' ) AS sosim_dauchamcach
+		FROM product
+		WHERE 1
+		) AS A
+	";
+	
+	$sql->set_query($table, "DISTINCT A.sosim", $conds, $others);
+
+	
+
+	$searchResult = $tRows = $sql->nRows;
+	if($tRows > 0)
+
+	{
+
+		$contentDetail = '<table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
+
+							<tr>
+
+								<td height="3" colspan=8></td>
+
+							</tr>
+
+							<tr height="26">
+								<td width="25" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold; text-align:center;background-color:#2D427B">STT</td>
+								<td width="70" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold; text-align:center;background:url('.$_IMG_DIR.'/frame_bg.gif)">'.$define["var_sosim"].'</td>
+								<td width="70" style="font-family:tahoma; font-size:11px;color:white; font-weight:bold;text-align:center;background:url('.$_IMG_DIR.'/frame_bg.gif)">'.$define["var_gia"].'</td>
+								<td width="70" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold;text-align:center;background:url('.$_IMG_DIR.'/frame_bg.gif)">'.$define["var_taikhoan"].'</td>
+								<td width="70" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold; text-align:center;background-color:#2D427B">Loai</td>
+								<td width="30" style="font-family:tahoma; font-size:11px;color:white;font-weight:bold;text-align:center;background:url('.$_IMG_DIR.'/frame_bg.gif)">Đặt mua</td>
+							</tr>';
+
+		
+
+		$low = $curRow; 
+
+		$curRow = 1;
+		
+		/*Luckymancvp
+		 * 
+		 */
+		$strArr = explode("%",$searchKeyword);
+		$strArrRep     = array();
+		$strArrTobeRep = array();
+		for ($i = 0; $i< count($strArr); $i++)
+			if ($strArr[$i] != "") {
+				$strArrRep[]      = "<span style=\"color:#fe0002;text-decoration:underline\">$strArr[$i]</span>";
+				$strArrTobeRep[]  = '/'.$strArr[$i].'/';
+			}
+		
+		while (($sql->set_farray()) && ($curRow<=$tRows) && ($curRow<=$curPg*$maxRows))
+
+		{
+
+			$curRow++;			                           
+
+			if($curRow > $low)
+
+			{
+
+				$productName = $sql->farray["sosim"];
+
+				$productId = $opt->optionvalue("product", "id", "sosim='".$productName."'");
+
+				$productName_dauchamcach = str_replace(" ", "", str_replace(".", "", $productName));
+				
+				$productName = $productName_dauchamcach;
+
+				$price = geld($opt->optionvalue("product", "giaxuat", "id='".$productId ."'"));
+
+				
+		$productName = preg_replace($strArrTobeRep,$strArrRep,$productName);
+		//$productName = str_replace("$searchKeyword", "<span style=\"color:#fe0002;text-decoration:underline\">$searchKeyword</span>",$productName);
+
+					$contentDetail .= "
+
+										<tr height=\"24\">
+										<td width=\"25\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:13px;color:#000000; text-align:center;font-weight:bold\">".$count."</td>
+										<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000; text-align:center;font-weight:bold\"><a href=\"".$Linkto."\">".$productName."</a></td>
+										<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:arial; font-size:13px;color:#000000; text-align:center;\">".$price." (vn&#273;)</td>
+										<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000;text-align:center;\">".$taihkoan."</td>
+										<td width=\"70\" style=\"border-right:1px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000;text-align:center;\">".$loai."</td>
+										<td width=\"30\" style=\"border-right:0px solid #c4c4c4;border-bottom:1px solid #c4c4c4;font-family:tahoma; font-size:11px;color:#000000; text-align:center;font-weight:bold\" class=\"datmua\"><a href=\"".$Linkto."\"><img src=\" ".$_IMG_DIR.'/cart_icon.png'."\"> </a></td>
+									</tr>
+
+											
+
+										
+											";		
+
+					if($count % $nCols == 0)
+
+					{
+
+						$contentDetail .= '</tr><tr>';
+
+					}
+
+					$count ++;
+
+				
+
+			}
+
+		}
+
+		$contentDetail .= '</tr></table>';
+
+	}else
+
+			{
+
+				$contentDetail .= '	<table width="100%" height="300" border="0" cellspacing="0" cellpadding="5">
+
+									<tr>
+
+										<td align="center" style="color:#FF6600; font-size:16px; font-weight:bold">'.$define["var_khongtimthayketquatimkiem"].'</td>
+
+									</tr>
+
+								</table>';
+
+			}	
 ?>
 <table width="90%" cellpadding="0" cellspacing="0" align="center">
 	<tr height="50"><td class="modulehead">Ch&#224;o m&#7915;ng qu&#7843;n tr&#7883; vi&#234;n <strong><?=$usrname?></strong>!</td></tr>
