@@ -8,7 +8,8 @@
 	
 	$search_sim = $_POST['search_sim'];
 	$search_sim = str_replace("*", "%", $search_sim);
-
+	$search_sim = str_replace(".", "", $search_sim);
+//	$search_sim = str_replace(" ", "", $search_sim);
 	echo $search_sim;
 	echo '<br>';
 	$count = count(explode("%",$search_sim));
@@ -16,7 +17,8 @@
 		{
 		$search_sim = "%".$search_sim."%";
 		}
-	$cond = "SELECT * FROM `product` WHERE `sosim` LIKE '".$search_sim."'";
+	$cond = "SELECT * FROM `product` WHERE REPLACE( sosim,'.','') LIKE '".$search_sim."'";
+	
 		
 	echo $cond;
 	echo '<br>';
